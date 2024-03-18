@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import ScissorImg from '../assets/images/project01/scissors.png'
 import RockImg from '../assets/images/project01/rock.png'
 import PaperImg from '../assets/images/project01/paper.png'
@@ -55,29 +56,30 @@ const RockPaperScissors = () => {
 
     return (
         <div className="rps-wrap">
-        <div className="rps-box-area">
-            <RockPaperScissorBox
-                title="You"
-                item={userSelect}
-                result={result}
-                />
-            <RockPaperScissorBox
-                title="Computer"
-                item={computerSelect}
-                result={result * -1}
-                />
-        </div>
-        <div className="rps-btn-area">
-            <button 
-                onClick={() => play("scissors")}
-                className="rps-btn scissor">가위</button>
-            <button 
-                onClick={() => play("rock")}
-                className="rps-btn rock">바위</button>
-            <button 
-                onClick={() => play("paper")}
-                className="rps-btn paper">보</button>
-        </div>
+            <Link to="/" className="back"></Link>
+            <div className="rps-box-area">
+                <RockPaperScissorBox
+                    title="You"
+                    item={userSelect}
+                    result={result}
+                    />
+                <RockPaperScissorBox
+                    title="Computer"
+                    item={computerSelect}
+                    result={result * -1}
+                    />
+            </div>
+            <div className="rps-btn-area">
+                <button 
+                    onClick={() => play("scissors")}
+                    className="rps-btn scissor">가위</button>
+                <button 
+                    onClick={() => play("rock")}
+                    className="rps-btn rock">바위</button>
+                <button 
+                    onClick={() => play("paper")}
+                    className="rps-btn paper">보</button>
+            </div>
         </div>
     )
 }

@@ -10,3 +10,76 @@ b,
 strong {
     font-weight: 700;
 }
+
+.back {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1b1b1b;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    transform: rotate(-45deg);
+}
+
+.wrap {
+    min-height: 100vh;
+    padding: 10px 36px 40px;
+}
+.wrap h1 {
+    position: sticky;
+    top: 0;
+    padding: 30px 0;
+    background-color: #fff;
+    font-size: 3rem;
+}
+.wrap h1 span {
+    padding-left: 10px;
+    font-size: 1.8rem;
+}
+.wrap .list {}
+.wrap .list .item {
+    margin-bottom: 20px;
+}
+.wrap .list .item a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    font-size: 1.6rem;
+}
+.wrap .list .item a:hover {
+    box-shadow: 2px 4px 18px rgba(0,0,0,0.25);
+}
+.wrap .list .item .tag {
+    display: block;
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+.wrap .list .item .tag01 {
+    background-color: #BEB8EB;
+}
+.wrap .list .item .tag02 {
+    background-color: #5299D3;
+}
+.wrap .list .item .tag03 {
+    background-color: #0B5563;
+}
+.wrap .list .item .tag04 {
+    background-color: #A2BCE0;
+}
+.wrap .list .item .tag05 {
+    background-color: #5E5C6C;
+}
+.wrap .list .item .title {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.wrap .list .item .date {
+    color: #979797;
+}

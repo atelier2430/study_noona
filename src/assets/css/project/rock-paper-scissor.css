@@ -18,6 +18,7 @@
     justify-content: space-between;
     align-items: center;
     width: 30vw;
+    min-height: 30vw;
     padding: 2vw;
     border: 5px solid #1b1b1b;
     background-color: #F9F7E8;

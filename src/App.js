@@ -1,9 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import RockPaperScissor from './pages/RockPaperScissor';
 
 function App() {
+
   return (
-    <div>React Study 01</div>
+    <div className='wrap'>
+      <RockPaperScissor />
+    </div>
   );
 }
 

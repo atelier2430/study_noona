@@ -1,0 +1,12 @@
+html,
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: #1b1b1b;
+}
+
+b,
+strong {
+    font-weight: 700;
+}

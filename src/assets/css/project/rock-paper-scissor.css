@@ -1,0 +1,74 @@
+.rps-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.rps-box-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:  5vw;
+    padding: 0 0 3vw;
+}
+.rps-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30vw;
+    padding: 2vw;
+    border: 5px solid #1b1b1b;
+    background-color: #F9F7E8;
+}
+.rps-box.win {
+    border-color: #57e46e;
+}
+.rps-box.lose {
+    border-color: #FF8B8B;
+}
+.rps-box .title {
+    font-size: 2rem;
+}
+.rps-box img {
+    width: 80%;
+    height: auto;
+}
+.rps-box .result {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #1b1b1b;
+}
+.rps-box.lose .result {
+    color: #FF8B8B;
+}
+.rps-box.win .result {
+    color: #57e46e
+}
+.rps-btn-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.rps-btn {
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0;
+}
+.rps-btn:hover {
+    filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+}
+.rps-btn.scissor {
+    background-image: url('../../images/project01/scissors.png');
+}
+.rps-btn.rock {
+    background-image: url('../../images/project01/rock.png');
+}
+.rps-btn.paper {
+    background-image: url('../../images/project01/paper.png');
+}

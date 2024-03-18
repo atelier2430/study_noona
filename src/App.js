@@ -1,12 +1,13 @@
 import './App.css';
-import RockPaperScissor from './pages/RockPaperScissor';
+import { Route, Routes } from 'react-router-dom';
+import RockPaperScissors from './pages/RockPaperScissors';
 
 function App() {
 
   return (
-    <div className='wrap'>
-      <RockPaperScissor />
-    </div>
+    <Routes>
+      <Route path='/rock-paper-scissors' element={<RockPaperScissors />}></Route>
+    </Routes>
   );
 }
 

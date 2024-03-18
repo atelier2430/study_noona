@@ -19,7 +19,7 @@ const choice = {
     }
 }
 
-const RockPaperScissor = () => {
+const RockPaperScissors = () => {
     const [userSelect, setUserSelect] = useState(null)
     const [computerSelect, setComputerSelect] = useState(null)
     const [result, setResult] = useState(null)
@@ -82,4 +82,4 @@ const RockPaperScissor = () => {
     )
 }
 
-export default RockPaperScissor
+export default RockPaperScissors

@@ -20,7 +20,6 @@ export default class RockPaperScissorBoxClass extends Component {
   render() {
     const { item, title } = this.props;
     const gameResult = this.calculateGameResult();
-    console.log('item', item);
     return (
       <div className={`rps-box ${item && gameResult}`}>
         <div className="title">{title}</div>

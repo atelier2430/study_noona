@@ -4,6 +4,7 @@ import IndexList from '../component/IndexList';
 function Index() {
   const assignmentArray = [
     {
+      id: 1,
       week: 1,
       title: '1. 리액트 기초 강의 1강~5강',
       dueDate: '',
@@ -11,6 +12,7 @@ function Index() {
       url: '',
     },
     {
+      id: 2,
       week: 1,
       title: '2. 가위바위보 게임 1강~4강',
       dueDate: '24.03.19 (화)',
@@ -18,6 +20,7 @@ function Index() {
       url: 'rock-paper-scissors',
     },
     {
+      id: 3,
       week: 1,
       title: '2. 가위바위보 게임 5강~6강',
       dueDate: '24.03.20 (수)',
@@ -25,6 +28,7 @@ function Index() {
       url: 'rock-paper-scissors',
     },
     {
+      id: 4,
       week: 1,
       title: '3. 클래스 컴포넌트 - 가위바위보 게임',
       dueDate: '24.03.21 (목)',
@@ -32,6 +36,7 @@ function Index() {
       url: 'rock-paper-scissors-class',
     },
     {
+      id: 5,
       week: 1,
       title: '4. 리액트 Lifecycle 1강~2강',
       dueDate: '',
@@ -39,6 +44,7 @@ function Index() {
       url: '',
     },
     {
+      id: 6,
       week: 1,
       title: '5. 두번째 프로젝트: 날씨앱 만들기 1강~6강',
       dueDate: '24.03.23 (토)',
@@ -46,6 +52,7 @@ function Index() {
       url: '',
     },
     {
+      id: 7,
       week: 1,
       title: '5. 두번째 프로젝트: 날씨앱 만들기 7강~9강',
       dueDate: '24.03.24 (일)',
@@ -62,6 +69,7 @@ function Index() {
       <ul className="list">
         {assignmentArray.map((assignment) => (
           <IndexList
+            key={assignment.id}
             week={assignment.week}
             title={assignment.title}
             dueDate={assignment.dueDate}

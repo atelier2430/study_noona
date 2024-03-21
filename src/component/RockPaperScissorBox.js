@@ -1,16 +1,24 @@
-import React from 'react'
+import React from 'react';
 
-const RockPaperScissorBox = (props) => {
-    const result = props.result > 0 ? "win" : (props.result < 0 ? "lose" : "tie")
-    return (
-        <div className={`rps-box ${props.item && result}`}>
-            <div className="title">{props.title}</div>
-            {props.item && 
-            <img src={props.item.img} alt="" />
-            }
-            <div className="result">{props.item && result}</div>
-        </div>
-    )
+function RockPaperScissorBox({ result, item, title }) {
+  function calculateGameResult() {
+    if (result > 0) {
+      return 'win';
+    } if (result < 0) {
+      return 'lose';
+    }
+    return 'tie';
+  }
+
+  const gameResult = calculateGameResult();
+
+  return (
+    <div className={`rps-box ${item && gameResult}`}>
+      <div className="title">{title}</div>
+      {item && <img src={item.img} alt="" />}
+      <div className="result">{item && gameResult}</div>
+    </div>
+  );
 }
 
-export default RockPaperScissorBox
+export default RockPaperScissorBox;

@@ -1,18 +1,18 @@
 * {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
 }
 *:before,
 *:after {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
 }
 *:focus {
-    outline: none;
+  outline: none;
 }
 html,
 body,
@@ -96,32 +96,32 @@ mark,
 audio,
 video,
 button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    /* user-select: none; */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  /* user-select: none; */
 }
 button,
 input {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-    outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  outline: none;
 }
 input,
 textarea {
-    -webkit-user-select: auto;
-    -moz-user-select: auto;
-    -ms-user-select: auto;
-    user-select: auto;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
 }
 button {
-    display: block;
-    cursor: pointer;
+  display: block;
+  cursor: pointer;
 }
 article,
 aside,
@@ -134,39 +134,39 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 blockquote:before,
 blockquote:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 img {
-    width: 100%;
-    max-width: 100%;
-    vertical-align: top;
-    backface-visibility: hidden;
-    border: 0;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: top;
+  backface-visibility: hidden;
+  border: 0;
 }

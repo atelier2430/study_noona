@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import RockImg from '../assets/images/project01/rock.png';
 
-export default class RockPaperScissorBoxClass extends Component {
+class RockPaperScissorBoxClass extends Component {
   constructor(props) {
     super(props);
 // eslint: Useless constructor
@@ -29,3 +31,21 @@ export default class RockPaperScissorBoxClass extends Component {
     );
   }
 }
+
+
+RockPaperScissorBoxClass.propTypes = {
+  item: PropTypes.shape({
+    img: PropTypes.string,
+  }),
+  title: PropTypes.string.isRequired,
+  result: PropTypes.number.isRequired,
+};
+
+RockPaperScissorBoxClass.defaultProps = {
+  item: {
+    name: 'Rock',
+    img: RockImg,
+  }
+};
+
+export default RockPaperScissorBoxClass;

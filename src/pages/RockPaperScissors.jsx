@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ScissorImg from '../assets/images/project01/scissors.png';
-import RockImg from '../assets/images/project01/rock.png';
-import PaperImg from '../assets/images/project01/paper.png';
-import RockPaperScissorBox from '../component/RockPaperScissorBox';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import ScissorImg from "../assets/images/project01/scissors.png";
+import RockImg from "../assets/images/project01/rock.png";
+import PaperImg from "../assets/images/project01/paper.png";
+import RockPaperScissorBox from "../component/RockPaperScissorBox";
 
 const choice = {
   rock: {
-    name: 'Rock',
+    name: "Rock",
     img: RockImg,
   },
   scissors: {
-    name: 'Scissors',
+    name: "Scissors",
     img: ScissorImg,
   },
   paper: {
-    name: 'Paper',
+    name: "Paper",
     img: PaperImg,
   },
 };
@@ -28,12 +28,15 @@ function RockPaperScissors() {
   const judgement = (user, computer) => {
     if (user.name === computer.name) {
       return 0;
-    } if (user.name === 'Rock') {
-      return computer.name === 'Scissors' ? 1 : -1;
-    } if (user.name === 'Scissors') {
-      return computer.name === 'Paper' ? 1 : -1;
-    } if (user.name === 'Paper') {
-      return computer.name === 'Rock' ? 1 : -1;
+    }
+    if (user.name === "Rock") {
+      return computer.name === "Scissors" ? 1 : -1;
+    }
+    if (user.name === "Scissors") {
+      return computer.name === "Paper" ? 1 : -1;
+    }
+    if (user.name === "Paper") {
+      return computer.name === "Rock" ? 1 : -1;
     }
     return undefined;
   };
@@ -59,11 +62,7 @@ function RockPaperScissors() {
     <div className="rps-wrap">
       <Link to="/" className="back" />
       <div className="rps-box-area">
-        <RockPaperScissorBox
-          title="You"
-          item={userSelect}
-          result={result}
-        />
+        <RockPaperScissorBox title="You" item={userSelect} result={result} />
         <RockPaperScissorBox
           title="Computer"
           item={computerSelect}
@@ -73,21 +72,21 @@ function RockPaperScissors() {
       <div className="rps-btn-area">
         <button
           type="button"
-          onClick={() => play('scissors')}
+          onClick={() => play("scissors")}
           className="rps-btn scissor"
         >
           가위
         </button>
         <button
           type="button"
-          onClick={() => play('rock')}
+          onClick={() => play("rock")}
           className="rps-btn rock"
         >
           바위
         </button>
         <button
           type="button"
-          onClick={() => play('paper')}
+          onClick={() => play("paper")}
           className="rps-btn paper"
         >
           보

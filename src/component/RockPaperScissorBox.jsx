@@ -1,15 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import RockImg from '../assets/images/project01/rock.png';
+import React from "react";
+import PropTypes from "prop-types";
+import RockImg from "../assets/images/project01/rock.png";
 
 function RockPaperScissorBox({ result, item, title }) {
   function calculateGameResult() {
     if (result > 0) {
-      return 'win';
-    } if (result < 0) {
-      return 'lose';
+      return "win";
     }
-    return 'tie';
+    if (result < 0) {
+      return "lose";
+    }
+    return "tie";
   }
 
   const gameResult = calculateGameResult();
@@ -33,7 +34,7 @@ RockPaperScissorBox.propTypes = {
 // 필수값이 아닌 props에 대한 기본값 설정
 RockPaperScissorBox.defaultProps = {
   item: {
-    name: 'Rock',
+    name: "Rock",
     img: RockImg,
   },
 };

@@ -1,12 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-function IndexList({
-  week, title, dueDate, submittedDate, url,
-}) {
+function IndexList({ week, title, dueDate, submittedDate, url }) {
   return (
-    <li className={`item ${dueDate && 'has-assign'}`}>
+    <li className={`item ${dueDate && "has-assign"}`}>
       <Link to={url}>
         <span className={`tag tag0${week}`}>
           {week}
@@ -16,11 +14,11 @@ function IndexList({
         <span className="date-area">
           <span className="date">
             <span>과제 제출 마감</span>
-            <span>{dueDate || '-'}</span>
+            <span>{dueDate || "-"}</span>
           </span>
           <span className="date">
             <span>제출 일자</span>
-            <span>{submittedDate || '-'}</span>
+            <span>{submittedDate || "-"}</span>
           </span>
         </span>
       </Link>
@@ -39,9 +37,8 @@ IndexList.propTypes = {
 
 // 필수값이 아닌 props에 대한 기본값 설정
 IndexList.defaultProps = {
-  dueDate: '',
-  submittedDate: '',
+  dueDate: "",
+  submittedDate: "",
 };
-
 
 export default IndexList;

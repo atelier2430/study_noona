@@ -1,9 +1,11 @@
 {
-  "semi": true,
-  "singleQuote": true,
   "tabWidth": 2,
-  "printWidth": 80,
-  "trailingComma": "all",
-  "arrowParens": "always",
-  "function-paren-newline": ["error", "consistent"]
+  "useTabs": false,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "semi": true, 
+  "arrowParens": "avoid",
+  "trailingComma": "es5",
+  "minItems": 0,
+  "printWidth": 140
 }

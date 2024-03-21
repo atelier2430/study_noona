@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import RockImg from '../assets/images/project01/rock.png';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import RockImg from "../assets/images/project01/rock.png";
 
 class RockPaperScissorBoxClass extends Component {
   calculateGameResult() {
     const { result } = this.props;
     if (result > 0) {
-      return 'win';
-    } if (result < 0) {
-      return 'lose';
+      return "win";
     }
-    return 'tie';
-  };
+    if (result < 0) {
+      return "lose";
+    }
+    return "tie";
+  }
 
   render() {
     const { item, title } = this.props;
@@ -26,7 +27,6 @@ class RockPaperScissorBoxClass extends Component {
   }
 }
 
-
 RockPaperScissorBoxClass.propTypes = {
   item: PropTypes.shape({
     img: PropTypes.string,
@@ -37,9 +37,9 @@ RockPaperScissorBoxClass.propTypes = {
 
 RockPaperScissorBoxClass.defaultProps = {
   item: {
-    name: 'Rock',
+    name: "Rock",
     img: RockImg,
-  }
+  },
 };
 
 export default RockPaperScissorBoxClass;

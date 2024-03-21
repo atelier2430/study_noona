@@ -1,25 +1,55 @@
-# prettier
+# eslint, prettier 적용 참고 링크
 
-trailingComma: 'all'
-: 마지막 요소 뒤에 쉼표를 항상 추가
-arrowParens: 'always'
-: 화살표 함수의 매개변수가 하나인 경우에도 괄호를 항상 추가
-singleQuote: true
-: 문자열을 항상 작은따옴표로 변경
-printWidth: 80
-: 줄 바꿈을 할 때 줄 너비를 80으로 제한
-tabWidth: 2
-: 탭의 너비를 2로 설정
-semi: true
-: 항상 세미콜론을 추가
-bracketSpacing: true
-: 객체 리터럴의 괄호 안에 공백을 추가
-jsxBracketSameLine: false
-: JSX의 꺽쇠 괄호를 여는 부분을 항상 새 줄에 추가
-jsxSingleQuote: false
-: JSX 속성 값을 항상 작은따옴표로 변경
-endOfLine: 'auto'
-: 줄 바꿈 문자를 자동으로 선택
+https://velog.io/@nudge411/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%97%90%EC%84%9C-ESlint-%EC%99%80-prettier-%EC%9E%AC%EC%84%A4%EC%A0%95-%ED%95%B4%EB%B2%84%EB%A6%AC%EA%B8%B0..-%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B8%B0%EB%A1%9D
+
+1. npm install -D prettier
+2. npm install -D prettier eslint-config-prettier eslint-plugin-prettier
+3. .eslintrc
+   {
+   "extends": ["plugin:prettier/recommended"]
+   }
+4. .eslintrc.js
+   module.exports = {
+   env: {
+   browser: true,
+   node: true,
+   },
+   root: true,
+   parser: "@typescript-eslint/parser",
+   plugins: ["@typescript-eslint"],
+   extends: [
+   "eslint:recommended",
+   "plugin:@typescript-eslint/recommended",
+   "plugin:prettier/recommended",
+   ],
+   rules: {
+   "no-extra-semi": "error",
+   },
+   globals: {},
+   ignorePatterns: [],
+   };
+5. setting.json
+   {
+   "editor.codeActionsOnSave": {
+   "source.fixAll.eslint": true
+   },
+   }
+6. .prettierrc
+   {
+   "tabWidth": 2,
+   "useTabs": false,
+   "singleQuote": true,
+   "jsxSingleQuote": true,
+   "semi": true,
+   "arrowParens": "avoid",
+   "trailingComma": "es5",
+   "minItems": 0,
+   "printWidth": 140
+   }
+7. package.json
+   "scripts": {
+   "lint": "eslint --fix ./src"
+   },
 
 # Getting Started with Create React App
 

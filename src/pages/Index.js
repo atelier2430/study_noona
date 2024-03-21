@@ -26,10 +26,10 @@ function Index() {
     },
     {
       week: 1,
-      title: '3. 클래스 컴포넌트',
+      title: '3. 클래스 컴포넌트 - 가위바위보 게임',
       dueDate: '24.03.21 (목)',
       submittedDate: '',
-      url: '',
+      url: 'rock-paper-scissors-class',
     },
     {
       week: 1,

@@ -5,6 +5,13 @@
   align-items: center;
   height: 100vh;
 }
+.rps-wrap h1 {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+}
 .rps-box-area {
   display: flex;
   justify-content: center;
@@ -18,7 +25,7 @@
   justify-content: space-between;
   align-items: center;
   width: 30vw;
-  min-height: 30vw;
+  min-height: 35vw;
   padding: 2vw;
   border: 5px solid #1b1b1b;
   background-color: #F9F7E8;

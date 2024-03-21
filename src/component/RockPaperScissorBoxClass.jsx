@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 import RockImg from '../assets/images/project01/rock.png';
 
 class RockPaperScissorBoxClass extends Component {
-  constructor(props) {
-    super(props);
-// eslint: Useless constructor
-    console.log('constructor');
-  }
-
   calculateGameResult() {
     const { result } = this.props;
     if (result > 0) {

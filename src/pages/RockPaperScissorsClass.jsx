@@ -32,8 +32,10 @@ export default class RockPaperScissorsClass extends Component {
   }
 
   judgement(user, computer) {
-// eslint: class 컴포넌트 안의 함수는 this를 사용해야 함. 로직에서 사용되지 않아서 임의로 콘솔 추가
-    if (this === undefined) console.log(this);
+// eslint: class 컴포넌트 안의 함수는 this를 사용해야 함.
+    if (this === undefined) {
+      throw new Error('Method judgement is not called with correct context.');
+    }
     if (user.name === computer.name) {
       return 0;
     } if (user.name === 'Rock') {
@@ -47,7 +49,9 @@ export default class RockPaperScissorsClass extends Component {
   };
 
   randomChoice() {
-    if (this === undefined) console.log(this);
+    if (this === undefined) {
+      throw new Error('Method judgement is not called with correct context.');
+    }
 // choice는 클래스 컴포넌트 밖에 있어서 this를 붙이지 않음
     const itemArray = Object.keys(choice);
     const randomItem = Math.floor(Math.random() * itemArray.length);

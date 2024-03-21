@@ -5,7 +5,7 @@
   "jsxSingleQuote": true,
   "semi": true, 
   "arrowParens": "avoid",
-  "trailingComma": "es5",
+  "trailingComma": "all",
   "minItems": 0,
   "printWidth": 140
 }

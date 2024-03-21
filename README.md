@@ -42,7 +42,7 @@ https://velog.io/@nudge411/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%97%90%EC%84%
    "jsxSingleQuote": true,
    "semi": true,
    "arrowParens": "avoid",
-   "trailingComma": "es5",
+   "trailingComma": "all",
    "minItems": 0,
    "printWidth": 140
    }

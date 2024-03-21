@@ -7,14 +7,14 @@ module.exports = {
   "extends": ["airbnb", "prettier"],
   "rules": {
     "trailingComma": "off",
-    "arrowParens": 1,
-    "singleQuote": 1,
-    "printWidth": 1,
-    "tabWidth": 1,
-    "semi": 1,
-    "bracketSpacing": 1,
-    "jsxBracketSameLine": 1,
-    "jsxSingleQuote": 1,
-    "endOfLine": 1
+    "arrowParens": "off",
+    "singleQuote": "off",
+    "printWidth": "off",
+    "tabWidth": "off",
+    "semi": "off",
+    "bracketSpacing": "off",
+    "jsxBracketSameLine": "off",
+    "jsxSingleQuote": "off",
+    "endOfLine": "off"
   }
 };

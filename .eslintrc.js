@@ -6,8 +6,8 @@ module.exports = {
   },
   extends: ['airbnb', 'prettier'],
   rules: {
-    trailingComma: 'all', // 마지막 요소 뒤에 쉼표를 항상 추가
-    arrowParens: 'always', // 화살표 함수의 매개변수가 하나인 경우에도 괄호를 항상 추가
+    trailingComma: 1, // 마지막 요소 뒤에 쉼표를 항상 추가
+    arrowParens: 1, // 화살표 함수의 매개변수가 하나인 경우에도 괄호를 항상 추가
     singleQuote: true, // 문자열을 항상 작은따옴표로 변경
     printWidth: 80, // 줄 바꿈을 할 때 줄 너비를 80으로 제한
     tabWidth: 2, // 탭의 너비를 2로 설정

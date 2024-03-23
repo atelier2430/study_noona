@@ -49,7 +49,7 @@ function Index() {
       title: '5. 두번째 프로젝트: 날씨앱 만들기 1강~6강',
       dueDate: '24.03.23 (토)',
       submittedDate: '',
-      url: '',
+      url: 'weather',
     },
     {
       id: 7,

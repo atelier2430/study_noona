@@ -1,0 +1,61 @@
+.weather-wrap {
+  position: relative;
+  width: 100%;
+  height: 56.25vw;
+  background-image: url('../../images/project02/skin.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.weather-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50.7031vw;
+  height: 31.7578vw;
+  transform: translate(-50%, -50%);
+  background-image: url('../../images/project02/mockup-skin.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.weather-card {
+  position: absolute;
+  top: 1.25vw;
+  left: 1.25vw;
+  right: 1.25vw;
+  padding: 1.25vw;
+  border-radius: 1.25vw;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  font-size: min(1.25vw, 26px);
+  line-height: min(2vw, 40px);
+}
+.weather-card img {
+  width: min(2vw, 40px);
+}
+.weather-inner .btn-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25vw;
+}
+.weather-inner .btn-area .btn-weather {
+  padding: 0.5vw 0.75vw;
+  border-radius: 0.5vw;
+  border: 1px solid rgba(113, 114, 82, 0.2);
+  background-color: #BFD989;
+  color: #0D0D0D;
+  font-size: min(1.25vw, 26px);
+}
+.weather-inner .btn-area .btn-weather.active {
+  background-color: #95A672;
+}
+.weather-inner .btn-area .btn-weather:hover {
+  background-color: #A6998A;
+  color: #F2E3D5;
+}

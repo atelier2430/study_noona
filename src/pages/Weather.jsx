@@ -1,31 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 function Weather() {
-  const [location, setLocation] = useState({lat: 0, lon: 0})
-  let API_URL = '';
+  const weatherApiKey = process.env.REACT_APP_OPEN_WEATHER_KEY;
 
-  const fetchLocation = (url) => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-          console.log('data',data);
-      })
-      .catch((err) => {
-          console.log(err.message);
-      });
+  const getWeatherByCurrentLocation = async (lat, lon) => {
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`
+    const response = await fetch(url)
+    const data = await response.json()
+
+    console.log('data', data)
   }
   
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
-      const latValue = position.coords.latitude;
-      const lonValue = position.coords.longitude;
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
       
-      setLocation({lat: latValue, lon: lonValue})
+      getWeatherByCurrentLocation(lat, lon)
     })
-    
-    API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=d7382c5515b377906712a0821d953cec`
-
-    fetchLocation(API_URL)
   }
 
   useEffect(() => {

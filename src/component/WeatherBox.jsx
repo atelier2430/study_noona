@@ -18,14 +18,14 @@ function WeatherBox({weather}) {
   }
 
   const getWeatherInfo = () => {
-      setRecommStyle(weather.main.temp)
-      setImgSrc(weather.weather[0].icon)
-      setCurrTemp(Math.round(weather.main.temp))
+    setRecommStyle(weather.main.temp)
+    setImgSrc(weather.weather[0].icon)
+    setCurrTemp(Math.round(weather.main.temp))
   }
 
   useEffect(() => {
     if(weather) getWeatherInfo()
-  },[])
+  },[weather])
 
   return (
     <div className="weather-card">

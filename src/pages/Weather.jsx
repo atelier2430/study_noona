@@ -5,12 +5,12 @@ import WeatherButton from '../component/WeatherButton';
 
 function Weather() {
   // const API_KEY = process.env.REACT_APP_OPEN_WEATHER_KEY;
-  // const API_KEY = 'd7382c5515b377906712a0821d953cec'
+  const API_KEY = 'd7382c5515b377906712a0821d953cec'
   const [weather, setWeather] = useState(null)
 
   // 위치(위도, 경도)를 기준으로 날씨 가져오기
   const getWeatherByCurrentLocation = async (lat, lon) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=d7382c5515b377906712a0821d953cec&units=metric`
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     const response = await fetch(url)
     const data = await response.json()
 

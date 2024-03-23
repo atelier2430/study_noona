@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function WeatherBox({type, weather}) {
+function WeatherBox({weather}) {
   const [currTemp, setCurrTemp] = useState(null)
   const [imgSrc, setImgSrc] = useState('')
   const [recommText, setRecommText] = useState('')
@@ -18,11 +18,9 @@ function WeatherBox({type, weather}) {
   }
 
   const getWeatherInfo = () => {
-    if(type === "location") {
       setRecommStyle(weather.main.temp)
       setImgSrc(weather.weather[0].icon)
       setCurrTemp(Math.round(weather.main.temp))
-    }
   }
 
   useEffect(() => {

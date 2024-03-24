@@ -27,14 +27,15 @@ function Weather() {
   // 위치(위도, 경도)를 기준으로 날씨 가져오기
   const getWeatherByCurrentLocation = async () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${location[0]}&lon=${location[1]}&appid=${API_KEY}&units=metric&lang=kr`
+    // eslint-disable-next-line no-useless-catch
     try {
       setLoading(true)
       const response = await fetch(url)
       const data = await response.json()
       setLoading(false)
       setWeather(data)
-    } catch (err){
-      alert(`날씨를 불러오는데 실패했습니다.\n${err}`)
+    } catch (error){
+      throw error;
     }
 
   }
@@ -46,14 +47,15 @@ function Weather() {
   // 도시 이름으로 날씨 가져오기
   const getWeatherByCityName = async () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=kr`
+    // eslint-disable-next-line no-useless-catch
     try {
       setLoading(true)
       const response = await fetch(url)
       const data = await response.json()
       setLoading(false)
       setWeather(data)
-    } catch (err){
-      alert(`날씨를 불러오는데 실패했습니다.\n${err}`)
+    } catch (error){
+      throw error;
     }
   }
 

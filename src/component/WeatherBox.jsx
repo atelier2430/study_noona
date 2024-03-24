@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 function WeatherBox({weather}) {
   const [currTemp, setCurrTemp] = useState(null)
+  const [currDecs, setCurrDesc] = useState(null)
   const [imgSrc, setImgSrc] = useState('')
   const [recommText, setRecommText] = useState('')
 
@@ -21,6 +22,7 @@ function WeatherBox({weather}) {
     setRecommStyle(weather.main.temp)
     setImgSrc(weather.weather[0].icon)
     setCurrTemp(Math.round(weather.main.temp))
+    setCurrDesc(weather.weather[0].description)
   }
 
   useEffect(() => {
@@ -30,7 +32,13 @@ function WeatherBox({weather}) {
   return (
     <div className="weather-card">
       {weather && 
-      <span>현재 위치는 {`${currTemp}°C`} <img src={`https://openweathermap.org/img/wn/${imgSrc}.png`} alt="weather" /></span>
+      <span>
+        {weather.name?weather.name:'현재 위치'}의 날씨는 {currDecs}!
+          <span className="icon-area">
+            {`${currTemp}°C`}
+            <img src={`https://openweathermap.org/img/wn/${imgSrc}.png`} alt="weather" />
+          </span>
+        </span>
       }
       {!weather && '오늘 기분은 어떤가요?'}
       <div className="recomm-text-area">

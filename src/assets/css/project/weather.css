@@ -35,6 +35,11 @@
   font-size: min(1.25vw, 26px);
   line-height: min(2vw, 40px);
 }
+.weather-card .icon-area {
+  position: absolute;
+  top: 1.25vw;
+  right: 1.25vw;
+}
 .weather-card img {
   width: min(2vw, 40px);
 }

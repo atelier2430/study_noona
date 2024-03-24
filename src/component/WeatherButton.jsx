@@ -43,7 +43,7 @@ function WeatherButton({weather, cities, setCity, setLocation, selectedCity, set
             variant="primary"
             className={index === selectedCity && 'active'}
             onClick={() => handleButtonClick(city, index)}
-          >{city.cityName}</Button>
+          >{city.cityNameKr}</Button>
         ))}
       </ThemeProvider>
     </div>

@@ -6,13 +6,18 @@ import WeatherButton from '../component/WeatherButton';
 
 function Weather() {
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+  },[])
+
   const API_KEY = process.env.REACT_APP_OPEN_WEATHER_KEY;
   const [weather, setWeather] = useState(null)
   const cities = [
-    { cityId: 5603240, cityName: 'paris', },
-    { cityId: 5128581, cityName: 'new york', },
-    { cityId: 1850147, cityName: 'tokyo', },
-    { cityId: 1835847, cityName: 'seoul', },
+    { cityId: 5603240, cityName: 'paris', cityNameKr: '파리' },
+    { cityId: 5128581, cityName: 'new york', cityNameKr: '뉴욕' },
+    { cityId: 1850147, cityName: 'tokyo', cityNameKr: '도쿄' },
+    { cityId: 1835847, cityName: 'seoul', cityNameKr: '서울' },
   ]
   const [city, setCity] = useState('seoul')
   const [cityId, setCityId] = useState(1835847)
@@ -28,9 +33,12 @@ function Weather() {
     const data = await response.json()
     setLoading(false)
 
-    console.log('loca data', data)
     setWeather(data)
   }
+
+  useEffect(() => {
+    getWeatherByCurrentLocation([location[0], location[1]])
+  }, [location])
 
   // 도시 이름으로 날씨 가져오기
   const getWeatherByCityName = async () => {
@@ -40,9 +48,12 @@ function Weather() {
     const data = await response.json()
     setLoading(false)
 
-    console.log('name data', data)
     setWeather(data)
   }
+
+  useEffect(() => {
+    getWeatherByCityName()
+  }, [city])
 
   // 도시 아이디로 날씨 가져오기
   const getWeatherByCityId = async () => {
@@ -52,25 +63,12 @@ function Weather() {
     // const data = await response.json()
     // setLoading(false)
 
-    // console.log('id data', data)
     // setWeather(data)
   }
 
   useEffect(() => {
-    getWeatherByCurrentLocation([location[0], location[1]])
-  }, [location])
-
-  useEffect(() => {
-    getWeatherByCityName()
-  }, [city])
-
-  useEffect(() => {
     getWeatherByCityId()
   }, [cityId])
-
-  useEffect(() => {
-    setLoading(true)
-  },[])
 
   return (
     <div className='weather-wrap'>
@@ -79,7 +77,7 @@ function Weather() {
         {loading?
         <LoadingComp loading={loading}/>
         :( <>
-        <WeatherBox weather={weather}/>
+        <WeatherBox weather={weather} cities={cities}/>
         <WeatherButton
           weather={weather}
           cities={cities}

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-function WeatherBox({weather}) {
+function WeatherBox({weather, cities}) {
   const [currTemp, setCurrTemp] = useState(null)
   const [currDecs, setCurrDesc] = useState(null)
   const [imgSrc, setImgSrc] = useState('')
   const [recommText, setRecommText] = useState('')
+  const [cityName, setCityName] = useState('서울')
 
   // 기온별로 옷차림 추천하기
   const setRecommStyle = (temp) => {
@@ -23,6 +24,9 @@ function WeatherBox({weather}) {
     setImgSrc(weather.weather[0].icon)
     setCurrTemp(Math.round(weather.main.temp))
     setCurrDesc(weather.weather[0].description)
+
+    const currentCity = cities.filter((city) => city.cityName.toUpperCase() === weather.name.toUpperCase())
+    setCityName(currentCity.length > 0 ? currentCity[0].cityNameKr : '현재 위치')
   }
 
   useEffect(() => {
@@ -33,7 +37,7 @@ function WeatherBox({weather}) {
     <div className="weather-card">
       {weather && 
       <span>
-        {weather.name?weather.name:'현재 위치'}의 날씨는 {currDecs}!
+        {weather.name && cityName}의 날씨는 {currDecs}!
           <span className="icon-area">
             {`${currTemp}°C`}
             <img src={`https://openweathermap.org/img/wn/${imgSrc}.png`} alt="weather" />

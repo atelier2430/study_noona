@@ -111,4 +111,17 @@ strong {
   color: #cb3939;
 }
 
-/* success failure */
+.loading-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.loading-area.show {
+  display: flex;
+}

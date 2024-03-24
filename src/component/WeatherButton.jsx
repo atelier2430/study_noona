@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Button, ThemeProvider } from 'react-bootstrap';
 
-function WeatherButton({weather, cities, setCity, setLocation, selectedCity, setCityId, setSelectedCity}) {
+function WeatherButton({weather, cities, setCity, setLocation, selectedCity, setSelectedCity}) {
   const [currLocation, setCurrLocation] = useState(null)
 
   // 현재 위치 가져오기
@@ -16,13 +16,11 @@ function WeatherButton({weather, cities, setCity, setLocation, selectedCity, set
   const handleButtonClick = (item, index) => {
     setCity(item.cityName)
     setSelectedCity(index)
-    setCityId(item.cityId)
   }
 
   const handleCurrLocationButtonClick = () => {
     setLocation(currLocation)
     setSelectedCity(null)
-    setCityId(null)
   }
 
   useEffect(() => {

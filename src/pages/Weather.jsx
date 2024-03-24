@@ -20,7 +20,6 @@ function Weather() {
     { cityId: 1835847, cityName: 'seoul', cityNameKr: '서울' },
   ]
   const [city, setCity] = useState('seoul')
-  const [cityId, setCityId] = useState(1835847)
   const [location, setLocation] = useState(['37.566','126.9784'])
 
   const [selectedCity, setSelectedCity] = useState(null)
@@ -62,21 +61,6 @@ function Weather() {
     getWeatherByCityName()
   }, [city])
 
-  // 도시 아이디로 날씨 가져오기
-  const getWeatherByCityId = async () => {
-    // const url = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${API_KEY}&units=metric&lang=kr`
-    // setLoading(true)
-    // const response = await fetch(url)
-    // const data = await response.json()
-    // setLoading(false)
-
-    // setWeather(data)
-  }
-
-  useEffect(() => {
-    getWeatherByCityId()
-  }, [cityId])
-
   return (
     <div className='weather-wrap'>
       <Link to="/" className="back" />
@@ -89,7 +73,6 @@ function Weather() {
           weather={weather}
           cities={cities}
           setCity={setCity}
-          setCityId={setCityId}
           setLocation={setLocation}
           selectedCity={selectedCity}
           setSelectedCity={setSelectedCity}/>

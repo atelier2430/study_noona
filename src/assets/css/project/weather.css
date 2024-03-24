@@ -43,6 +43,15 @@
 .weather-card img {
   width: min(2vw, 40px);
 }
+.weather-card .recomm-text-area {
+  display: flex;
+  align-items: flex-end;
+  margin-top: max(-2vw, -40px);
+}
+.weather-card .recomm-text-area img {
+  width: auto;
+  height: min(4vw, 80px);
+}
 .weather-inner .btn-area {
   display: flex;
   justify-content: center;
@@ -58,9 +67,9 @@
   font-size: min(1.25vw, 26px);
 }
 .weather-inner .btn-area .btn-weather.active {
-  background-color: #95A672;
-}
-.weather-inner .btn-area .btn-weather:hover {
   background-color: #A6998A;
   color: #F2E3D5;
+}
+.weather-inner .btn-area .btn-weather:hover {
+  background-color: #95A672;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function IndexList({
+function IndexItem({
   week, title, dueDate, submittedDate, url,
 }) {
   return (
@@ -29,7 +29,7 @@ function IndexList({
 }
 
 // props 유효성 검사 추가
-IndexList.propTypes = {
+IndexItem.propTypes = {
   week: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   dueDate: PropTypes.string,
@@ -38,10 +38,10 @@ IndexList.propTypes = {
 };
 
 // 필수값이 아닌 props에 대한 기본값 설정
-IndexList.defaultProps = {
+IndexItem.defaultProps = {
   dueDate: '',
   submittedDate: '',
 };
 
 
-export default IndexList;
+export default IndexItem;

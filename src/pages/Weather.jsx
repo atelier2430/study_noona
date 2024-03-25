@@ -11,7 +11,7 @@ function Weather() {
     setLoading(true)
   },[])
 
-  const API_KEY = 'd7382c5515b377906712a0821d953cec'
+  const API_KEY = process.env.REACT_APP_OPEN_WEATHER_KEY
   const [weather, setWeather] = useState(null)
   const cities = [
     { cityId: 5603240, cityName: 'paris', cityNameKr: '파리' },

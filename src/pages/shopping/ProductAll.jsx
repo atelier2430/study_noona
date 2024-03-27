@@ -13,7 +13,6 @@ function ProductAll() {
   }
 
   useEffect(()=>{
-    console.log('API_JSON_SERVER', API_JSON_SERVER)
     getProducts()
   },[])
 

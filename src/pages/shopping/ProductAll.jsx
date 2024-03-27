@@ -6,14 +6,20 @@ function ProductAll() {
   const API_JSON_SERVER = process.env.REACT_APP_API_JSON_SERVER
   const [productList, setProductList] = useState([])
   const getProducts = async () => {
-    const url = `${API_JSON_SERVER}/products`
-    // eslint-disable-next-line no-useless-catch
+    const url = `${API_JSON_SERVER}/products`;
     try {
-      const res = await fetch(url)
-      const data = await res.json()
-      setProductList(data)
+      const res = await fetch(url, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      if (!res.ok) {
+        throw new Error('Failed to fetch products');
+      }
+      const data = await res.json();
+      setProductList(data);
     } catch (error) {
-      throw error
+      throw new Error(error)
     }
   }
 

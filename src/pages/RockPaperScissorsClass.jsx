@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import ScissorImg from '../assets/images/project01/scissors.png';
 import RockImg from '../assets/images/project01/rock.png';
 import PaperImg from '../assets/images/project01/paper.png';
@@ -74,7 +73,6 @@ export default class RockPaperScissorsClass extends Component {
 
     return (
       <div className="rps-wrap">
-        <Link to="/" className="back" />
         <h1>Class Component</h1>
         <div className="rps-box-area">
 {/* 구조분해할당 사용으로 this를 붙이지 않아도 됨 */}

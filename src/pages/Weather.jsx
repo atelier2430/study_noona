@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import LoadingComp from '../component/Loading';
 import WeatherBox from '../component/WeatherBox';
 import WeatherButton from '../component/WeatherButton';
@@ -65,7 +64,6 @@ function Weather() {
 
   return (
     <div className='weather-wrap'>
-      <Link to="/" className="back" />
       <div className="weather-inner">
         {loading?
         <LoadingComp loading={loading}/>

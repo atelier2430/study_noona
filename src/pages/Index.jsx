@@ -54,8 +54,10 @@ function Index() {
                   key={item.id}
                   week={assignment.week}
                   title={item.title}
+                  standardDate={item.standardDate}
                   dueDate={item.dueDate}
                   submittedDate={item.submittedDate}
+                  pass={item.pass}
                   url={item.url}
                 />
               ))}

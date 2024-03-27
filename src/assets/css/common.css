@@ -195,7 +195,8 @@ strong {
 .wrap .list .item .date-area {
   display: flex;
   flex-shrink: 0;
-  width: 230px;
+  gap: 20px;
+  width: 380px;
 }
 .wrap .list .item .date {
   display: flex;
@@ -203,8 +204,11 @@ strong {
   flex: 1;
   color: #979797;
   text-align: center;
+  white-space: nowrap;
 }
 .wrap .list .item .date span:nth-child(2) {
+  flex: 0;
+  align-items: center;
   color: #5d5d5d;
   font-weight: 700;
 }
@@ -213,6 +217,35 @@ strong {
 }
 .wrap .list .item .date.failure span:nth-child(2) {
   color: #cb3939;
+}
+.wrap .list .item .date span.pass {
+  position: relative;
+}
+.wrap .list .item .date span.pass::after {
+  content: 'PASS';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  border: 3px solid #ff0000;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: translate(30%, -60%) rotate(-20deg);
+  -webkit-transform: translate(30%, -60%) rotate(-20deg);
+  -moz-transform: translate(30%, -60%) rotate(-20deg);
+  -ms-transform: translate(30%, -60%) rotate(-20deg);
+  -o-transform: translate(30%, -60%) rotate(-20deg);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ff0000;
+  opacity: 0.6;
 }
 
 .loading-area {
@@ -257,6 +290,12 @@ strong {
     padding: 10px 11px;
   }
   .wrap .list .item .date-area {
+    flex-wrap: wrap;
     width: 100%;
+    padding: 0 5px;
+  }
+  .wrap .list .item .date {
+    flex: 0;
+    text-align: left;
   }
 }

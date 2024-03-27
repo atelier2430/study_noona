@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function IndexItem({
-  week, title, dueDate, submittedDate, url,
+  week, title, standardDate, dueDate, submittedDate, pass, url,
 }) {
   return (
     <li className={`item ${dueDate && 'has-assign'}`}>
@@ -15,12 +15,18 @@ function IndexItem({
         <span className="title">{title}</span>
         <span className="date-area">
           <span className="date">
-            <span>과제 제출 마감</span>
+            <span>수강일</span>
+            <span>{standardDate || '-'}</span>
+          </span>
+          <span className="date">
+            <span>과제 제출 마감 (2am)</span>
             <span>{dueDate || '-'}</span>
           </span>
           <span className="date">
             <span>제출 일자</span>
-            <span>{submittedDate || '-'}</span>
+            <span className={(pass && submittedDate)?'pass':''}>
+              {submittedDate || '-'}
+            </span>
           </span>
         </span>
       </Link>
@@ -32,15 +38,19 @@ function IndexItem({
 IndexItem.propTypes = {
   week: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
+  standardDate: PropTypes.string,
   dueDate: PropTypes.string,
   submittedDate: PropTypes.string,
+  pass: PropTypes.bool,
   url: PropTypes.string.isRequired,
 };
 
 // 필수값이 아닌 props에 대한 기본값 설정
 IndexItem.defaultProps = {
-  dueDate: '',
-  submittedDate: '',
+  standardDate: '',
+  dueDate: '-',
+  submittedDate: '-',
+  pass: false,
 };
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import RockImg from '../assets/images/project01/rock.png';
+import RockImg from '../../assets/images/project01/rock.png';
 
 class RockPaperScissorBoxClass extends Component {
   calculateGameResult() {

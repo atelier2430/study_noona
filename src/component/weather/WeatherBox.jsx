@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import recommImg4 from '../assets/images/project02/temp-4.png'
-import recommImg8 from '../assets/images/project02/temp-8.png'
-import recommImg11 from '../assets/images/project02/temp-11.png'
-import recommImg16 from '../assets/images/project02/temp-16.png'
-import recommImg19 from '../assets/images/project02/temp-19.png'
-import recommImg22 from '../assets/images/project02/temp-22.png'
-import recommImg27 from '../assets/images/project02/temp-27.png'
-import recommImg28 from '../assets/images/project02/temp-28.png'
+import recommImg4 from '../../assets/images/project02/temp-4.png'
+import recommImg8 from '../../assets/images/project02/temp-8.png'
+import recommImg11 from '../../assets/images/project02/temp-11.png'
+import recommImg16 from '../../assets/images/project02/temp-16.png'
+import recommImg19 from '../../assets/images/project02/temp-19.png'
+import recommImg22 from '../../assets/images/project02/temp-22.png'
+import recommImg27 from '../../assets/images/project02/temp-27.png'
+import recommImg28 from '../../assets/images/project02/temp-28.png'
 
 function WeatherBox({weather, cities}) {
   const [currTemp, setCurrTemp] = useState(null)

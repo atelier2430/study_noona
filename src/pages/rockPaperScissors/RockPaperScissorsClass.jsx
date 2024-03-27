@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ScissorImg from '../assets/images/project01/scissors.png';
-import RockImg from '../assets/images/project01/rock.png';
-import PaperImg from '../assets/images/project01/paper.png';
-import RockPaperScissorBoxClass from '../component/RockPaperScissorBoxClass';
+import ScissorImg from '../../assets/images/project01/scissors.png';
+import RockImg from '../../assets/images/project01/rock.png';
+import PaperImg from '../../assets/images/project01/paper.png';
+import RockPaperScissorBoxClass from '../../component/rockPaperScissors/RockPaperScissorBoxClass';
 
 const choice = {
   rock: {

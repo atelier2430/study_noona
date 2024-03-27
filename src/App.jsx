@@ -3,13 +3,13 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Route, Routes, useLocation, Link } from 'react-router-dom';
 import Index from './pages/Index';
-import RockPaperScissors from './pages/RockPaperScissors';
-import RockPaperScissorsClass from './pages/RockPaperScissorsClass';
-import Weather from './pages/Weather';
+import RockPaperScissors from './pages/rockPaperScissors/RockPaperScissors';
+import RockPaperScissorsClass from './pages/rockPaperScissors/RockPaperScissorsClass';
+import Weather from './pages/weather/Weather';
 import Header from './component/shopping/Header';
 import Login from './component/shopping/Login';
-import ProductAll from './component/shopping/ProductAll';
-import ProductDetail from './component/shopping/ProductDetail';
+import ProductAll from './pages/shopping/ProductAll';
+import ProductDetail from './pages/shopping/ProductDetail';
 
 function App() {
   const location = useLocation();

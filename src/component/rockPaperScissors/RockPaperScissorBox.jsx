@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RockImg from '../assets/images/project01/rock.png';
+import RockImg from '../../assets/images/project01/rock.png';
 
 function RockPaperScissorBox({ result, item, title }) {
   function calculateGameResult() {

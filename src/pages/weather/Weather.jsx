@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import LoadingComp from '../component/Loading';
-import WeatherBox from '../component/WeatherBox';
-import WeatherButton from '../component/WeatherButton';
+import LoadingComp from '../../component/common/Loading';
+import WeatherBox from '../../component/weather/WeatherBox';
+import WeatherButton from '../../component/weather/WeatherButton';
 
 function Weather() {
   const [loading, setLoading] = useState(false)

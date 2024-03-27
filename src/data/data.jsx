@@ -86,8 +86,8 @@ const AssignmentData = [
         title: '7. 세번째 프로젝트: 쇼핑몰 웹사이트 만들기 1강~5강',
         standardDate: '24.03.27 (수)',
         dueDate: '24.03.28 (목)',
-        submittedDate: '',
-        pass: false,
+        submittedDate: '24.03.28 (목)',
+        pass: true,
         url: 'hnm',
       },
       {

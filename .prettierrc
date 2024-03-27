@@ -4,6 +4,6 @@
   "tabWidth": 2,
   "printWidth": 80,
   "trailingComma": "all",
-  "arrowParens": "always",
-  "function-paren-newline": ["error", "consistent"]
+  "arrowParens": "as-needed",
+  "function-paren-newline": "off"
 }

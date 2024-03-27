@@ -142,7 +142,8 @@ a {
   cursor: pointer;
 }
 ol,
-ul {
+ul,
+li {
   list-style: none;
 }
 blockquote,
@@ -167,6 +168,7 @@ img {
   width: 100%;
   max-width: 100%;
   vertical-align: top;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   border: 0;
 }

@@ -24,6 +24,11 @@ strong {
   transform: rotate(-45deg);
 }
 
+.grid-container {
+  display: grid;
+}
+
+/* 인덱스 페이지 */
 .wrap {
   display: flex;
   flex-direction: column;

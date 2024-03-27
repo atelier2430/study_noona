@@ -7,7 +7,7 @@ import RockPaperScissors from './pages/rockPaperScissors/RockPaperScissors';
 import RockPaperScissorsClass from './pages/rockPaperScissors/RockPaperScissorsClass';
 import Weather from './pages/weather/Weather';
 import Header from './component/shopping/Header';
-import Login from './component/shopping/Login';
+import Login from './pages/shopping/Login';
 import ProductAll from './pages/shopping/ProductAll';
 import ProductDetail from './pages/shopping/ProductDetail';
 

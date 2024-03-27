@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RockImg from '../assets/images/project01/rock.png';
+import RockImg from '../../assets/images/project01/rock.png';
 
 function RockPaperScissorBox({ result, item, title }) {
   function calculateGameResult() {
@@ -17,7 +17,7 @@ function RockPaperScissorBox({ result, item, title }) {
   return (
     <div className={`rps-box ${item && gameResult}`}>
       <div className="title">{title}</div>
-      {item && <img src={item.img} alt="" />}
+      {item && <img src={item.img} alt={item.name} />}
       <div className="result">{item && gameResult}</div>
     </div>
   );

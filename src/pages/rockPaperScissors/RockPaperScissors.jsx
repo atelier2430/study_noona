@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ScissorImg from '../assets/images/project01/scissors.png';
-import RockImg from '../assets/images/project01/rock.png';
-import PaperImg from '../assets/images/project01/paper.png';
-import RockPaperScissorBox from '../component/RockPaperScissorBox';
+import ScissorImg from '../../assets/images/project01/scissors.png';
+import RockImg from '../../assets/images/project01/rock.png';
+import PaperImg from '../../assets/images/project01/paper.png';
+import RockPaperScissorBox from '../../component/rockPaperScissors/RockPaperScissorBox';
 
 const choice = {
   rock: {
@@ -57,7 +56,6 @@ function RockPaperScissors() {
 
   return (
     <div className="rps-wrap">
-      <Link to="/" className="back" />
       <div className="rps-box-area">
         <RockPaperScissorBox
           title="You"

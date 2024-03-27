@@ -7,9 +7,14 @@ function ProductAll() {
   const [productList, setProductList] = useState([])
   const getProducts = async () => {
     const url = `${API_JSON_SERVER}/products`
-    const res = await fetch(url)
-    const data = await res.json()
-    setProductList(data)
+    // eslint-disable-next-line no-useless-catch
+    try {
+      const res = await fetch(url)
+      const data = await res.json()
+      setProductList(data)
+    } catch (error) {
+      throw error
+    }
   }
 
   useEffect(()=>{

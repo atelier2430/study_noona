@@ -31,7 +31,7 @@ function App() {
         <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
         <Route path="/rock-paper-scissors-class" element={<RockPaperScissorsClass />} />
         <Route path="/weather" element={<Weather />} />
-        <Route path="/hnm/" element={<ProductAll />} />
+        <Route path="/hnm" element={<ProductAll />} />
         <Route path="/hnm/login" element={<Login />} />
         <Route path="/hnm/product/:id" element={<ProductDetail />} />
       </Routes>

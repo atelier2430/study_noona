@@ -41,7 +41,6 @@ function Header({isLogin, setIsLogin, setQuery, setAuthenticate}) {
   }
 
   const onClickRecommSearch = (word) => {
-    console.log(word)
     setQuery(`q=${word}`)
   }
 

@@ -22,7 +22,6 @@ function App() {
 
   useEffect(() => {
     SetCurrPathName(pathname)
-    console.log('isLogin', isLogin)
   },[location])
 
   // 로그인 상태 가져오기

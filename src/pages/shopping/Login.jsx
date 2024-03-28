@@ -37,9 +37,16 @@ function Login({ setIsLogin }) {
     window.localStorage.setItem("userEmail", JSON.stringify(userEmailObj))
   }
 
+  // 로컬스토리지에 사용자 로그인 여부 저장하기
+  const saveIsLogin = () => {
+    const isLoginObj = { isLogin: true }
+    window.localStorage.setItem("isLogin", JSON.stringify(isLoginObj))
+  }
+
   // 로그인하고 home으로 이동
   const goToHome = () => {
     if (isSaveUserEmail) { saveUserEmail() }
+    saveIsLogin()
     setIsLogin(true)
     navigate('/hnm')
   }
@@ -75,7 +82,7 @@ function Login({ setIsLogin }) {
         <input type="checkbox" name="" id="saveEmail" onChange={(e) => handleChangeSaveCheck(e)} />
         <span>아이디 저장하기</span>
       </label>
-      <button type="button" className="login-btn" onClick={() => { goToHome() }}>Login</button>
+      <button type="button" className="btn-black" onClick={() => { goToHome() }}>Login</button>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function ProductItem({product}) {
   const [price, setPrice] = useState('')
@@ -12,16 +13,22 @@ function ProductItem({product}) {
     formatNumberComma(product.price)
   },[])
 
+  const navigate = useNavigate()
+
+  const showDetail = (id) => {
+    navigate(`/hnm/product/${id}`)
+  }
+
   return (
     <li className="product-item">
-      <div className="img">
+      <button type="button" className="img" onClick={()=>showDetail(product.id)}>
         <img src={product.img} alt={`product${product.id}`} />
         <div className="size">
           {product.size.map((size)=>(
             <span key={size}>{size}</span>
             ))}
         </div>
-      </div>
+      </button>
       <div className="product-info">
         <div className="title">
           {product.title}

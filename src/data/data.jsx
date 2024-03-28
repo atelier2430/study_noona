@@ -97,7 +97,7 @@ const AssignmentData = [
         dueDate: '24.03.29 (금)',
         submittedDate: '24.03.29 (금)',
         pass: true,
-        url: '',
+        url: 'hnm',
       },
       {
         id: 11,

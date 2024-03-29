@@ -1,72 +1,96 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import LoadingComp from '../../component/common/Loading';
-import ProductItem from '../../component/shopping/ProductItem'
+import ProductItem from '../../component/shopping/ProductItem';
 
-function ProductAll({query}) {
-  const [loading, setLoading] = useState(false)
+function ProductAll() {
+  const [loading, setLoading] = useState(false);
+  const [query, setQuery] = useSearchParams();
+  const [viewColumn, setViewColumn] = useState(4);
+  const API_JSON_SERVER = process.env.REACT_APP_API_JSON_SERVER;
+  const [productList, setProductList] = useState([]);
 
   useEffect(() => {
-    setLoading(true)
-  },[])
+    setLoading(true);
+  }, []);
 
-  const API_JSON_SERVER = process.env.REACT_APP_API_JSON_SERVER
-  const [productList, setProductList] = useState([])
   const getProducts = async () => {
-    const url = `${API_JSON_SERVER}/products?${query}`;
+    const searchQuery = query.get('q');
+    const url = `${API_JSON_SERVER}/products?q=${searchQuery || ''}`;
     try {
-      setLoading(true)
+      setLoading(true);
       const res = await fetch(url, {
         headers: {
-          Accept: "application/json",
+          Accept: 'application/json',
         },
       });
       if (!res.ok) {
         throw new Error('Failed to fetch products');
       }
       const data = await res.json();
-      setLoading(false)
-      setProductList(data)
+      setLoading(false);
+      setProductList(data);
     } catch (error) {
-      throw new Error(error)
+      setQuery('');
+      throw new Error(error);
     }
-  }
+  };
 
-  useEffect(()=>{
-    getProducts()
-  },[])
+  useEffect(() => {
+    getProducts();
+  }, [query, viewColumn]);
+
+  const sortList = [
+    { id: 'orderReset', label: '추천순', defaultChecked: true, sort: '', order: '' },
+    { id: 'orderDesc', label: '최신순', defaultChecked: false, sort: 'createdDate', order: 'desc' },
+    { id: 'priceDesc', label: '낮은 가격순', defaultChecked: false, sort: 'price', order: 'desc' },
+    { id: 'priceAsc', label: '높은 가격순', defaultChecked: false, sort: 'price', order: 'asc' },
+  ];
+
+  const clickViewColumn = (num) => {
+    setViewColumn(num);
+  };
 
   return (
     <div>
       <Container className="product-list">
-      {loading?
-        <LoadingComp loading={loading}/>
-        :(
+        {loading ? (
+          <LoadingComp loading={loading} />
+        ) : (
           <>
-          {/* <div className="order-area">
-            <label htmlFor="orderDesc" className="radio-area">
-              <input type="radio" name="productOrder" id="orderDesc" />
-              <span>최신순</span>
-              ?_sort=createdDate&_order=desc
-            </label>
-            <label htmlFor="orderAsc" className="radio-area">
-              <input type="radio" name="productOrder" id="orderAsc" />
-              <span>오래된순</span>
-              ?_sort=createdDate&_order=asc
-            </label>
-          </div> */}
+            <div className="order-area">
+              {sortList.map((sort) => (
+                <label key={sort.id} htmlFor={sort.id} className="radio-area">
+                  <input
+                    type="radio"
+                    name="productSort"
+                    id={sort.id}
+                    defaultChecked={sort.defaultChecked}
+                  />
+                  <span>{sort.label}</span>
+                </label>
+              ))}
+              <button type="button" className="icon view-big" onClick={() => clickViewColumn(4)}>
+                크게 보기
+              </button>
+              <button type="button" className="icon view-small" onClick={() => clickViewColumn(2)}>
+                작게 보기
+              </button>
+            </div>
             <Row>
-            {productList.length && productList.map((product) => (
-              <Col lg={3} key={product.id}>
-                <ProductItem product={product}/>
-              </Col>
-            ))}
+              {productList.length > 0 &&
+                productList.map((product) => (
+                  <Col lg={viewColumn} key={product.id}>
+                    <ProductItem product={product} />
+                  </Col>
+                ))}
             </Row>
           </>
         )}
-        </Container>
+      </Container>
     </div>
-  )
+  );
 }
 
-export default ProductAll
+export default ProductAll;

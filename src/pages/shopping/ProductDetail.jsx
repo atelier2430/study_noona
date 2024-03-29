@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
+import LoadingComp from '../../component/common/Loading';
 
 function ProductDetail() {
+  const [loading, setLoading] = useState(false)
+  const [product, setProduct] = useState(null)
   const [price, setPrice] = useState(null)
 
   const formatNumberComma = (num) => {
@@ -9,47 +13,57 @@ function ProductDetail() {
     setPrice(num.toString().replace(regexp, ','))
   }
 
+  const API_JSON_SERVER = process.env.REACT_APP_API_JSON_SERVER
+  const { id } = useParams()
+  const getProductDetail = async () => {
+    const url = `${API_JSON_SERVER}/products/${id}`;
+    try {
+      setLoading(true)
+      const res = await fetch(url);
+      const data = await res.json();
+      setLoading(false)
+      setProduct(data)
+      formatNumberComma(data.price)
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+  
   useEffect(()=>{
-    formatNumberComma(99900)
+    setLoading(true)
+    getProductDetail()
   },[])
+
   return (
     <div className="product-detail-area">
-      <div className="product-img-area">
-        <img src="https://noona-hnm.netlify.app/pattern-jacket.jpeg" alt="" />
-        <img src="https://noona-hnm.netlify.app/pattern-jacket.jpeg" alt="" />
-      </div>
-      <div className="product-info-area">
-        <div className="title">
-          <span>벨티드 트윌 코트</span>
-          <span className="tag pick">PICK</span>
-          <span className="tag new">NEW</span>
+      {loading?
+        <LoadingComp loading={loading}/>
+      :(
+        <>
+        <div className="product-img-area">
+          <img src={product?product.img:""} alt="" />
+          <div className="tag-area">
+            {product && product.choice && <span className="tag pick">PICK</span>}
+            {product && product.new && <span className="tag new">NEW</span>}
+          </div>
         </div>
-        <div className="price">&#8361; {price}</div>
-        <Form.Select aria-label="Default select example">
-          <option>사이즈 선택</option>
-          <option value="1">S</option>
-          <option value="2">M</option>
-          <option value="3">L</option>
-        </Form.Select>
-        <button type="button" className="btn-black">추가</button>
-        <ul className="selected-product-list">
-          <li>
-            <span className="size">사이즈</span>
-            <span className="count">수량</span>
-            <span className="price">금액</span>
-          </li>
-          <li>
-            <span className="size">S</span>
-            <span className="count">1</span>
-            <span className="price">&#8361; {price}</span>
-          </li>
-          <li>
-            <span className="size">M</span>
-            <span className="count">1</span>
-            <span className="price">&#8361; {price}</span>
-          </li>
-        </ul>
-      </div>
+        <div className="product-info-area">
+          <div className="title">
+            <span>{product?product.title:""}</span>
+          </div>
+          <div className="price">&#8361; {price}</div>
+          <Form.Select aria-label="Default select example">
+            <option>사이즈 선택</option>
+            {product
+            ? product.size.map((size, index) => (
+              <option value={`${index}`}>{size}</option>
+            ))
+            : null}
+          </Form.Select>
+          <button type="button" className="btn-black">추가</button>
+        </div>
+        </>
+      )}
     </div>
   )
 }

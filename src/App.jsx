@@ -18,7 +18,6 @@ function App() {
   const [currPathName, SetCurrPathName] = useState('')
   const [isLogin, setIsLogin] = useState(false)
   const [authenticate, setAuthenticate] = useState(false)
-  const [query, setQuery] = useState('')
 
   useEffect(() => {
     SetCurrPathName(pathname)
@@ -27,8 +26,7 @@ function App() {
   // 로그인 상태 가져오기
   const getIsLogin = () => {
     const localStorageIsLogin = JSON.parse(localStorage.getItem('isLogin'));
-    setIsLogin(localStorageIsLogin?.isLogin);
-
+    setIsLogin(localStorageIsLogin || "");
   }
 
   useEffect(()=>{
@@ -38,7 +36,7 @@ function App() {
   return (
     <div>
       {/* 홈을 제외하고 뒤로가기 출력 */}
-      {currPathName !== "/" && <Link to="/" className="back" />}
+      {currPathName !== "/" && <Link to="/" className="back">과제 목록으로 돌아가기</Link>}
       {/* hnm 쇼핑몰 일때만 Header 출력 */}
       {currPathName.includes('hnm') && (
         <Header
@@ -46,7 +44,6 @@ function App() {
           setIsLogin={setIsLogin}
           authenticate={authenticate}
           setAuthenticate={setAuthenticate}
-          setQuery={setQuery}
           />
       )}
       <Routes>
@@ -54,7 +51,7 @@ function App() {
         <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
         <Route path="/rock-paper-scissors-class" element={<RockPaperScissorsClass />} />
         <Route path="/weather" element={<Weather />} />
-        <Route path="/hnm" element={<ProductAll query={query} />} />
+        <Route path="/hnm" element={<ProductAll />} />
         <Route path="/hnm/login" element={<Login setIsLogin={setIsLogin} />} />
         <Route path="/hnm/login-noona" element={<LoginNoona setAuthenticate={setAuthenticate}/>} />
         <Route path="/hnm/product/:id" element={<PrivateRoute isLogin={isLogin}/>} />

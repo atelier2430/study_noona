@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import Logo from './Logo'
 
-function Header({isLogin, setIsLogin, setQuery, setAuthenticate}) {
+function Header({isLogin, setIsLogin, setAuthenticate}) {
+  const searchInputRef = useRef()
+  const [searchValue, setSearchValue] = useState(null)
   const navigate = useNavigate()
   const menuList = [
     { id: 'header1', params: '/hnm', title: 'Women' },
@@ -41,7 +43,16 @@ function Header({isLogin, setIsLogin, setQuery, setAuthenticate}) {
   }
 
   const onClickRecommSearch = (word) => {
-    setQuery(`q=${word}`)
+    searchInputRef.current.focus();
+    setSearchValue('');
+    setSearchValue(word);
+    navigate(`/hnm/?q=${word}`)
+  }
+
+  const search = (e) => {
+    if(e.key === "Enter" || e.keyCode === 13){
+      navigate(`/hnm/?q=${e.target.value}`)
+    }
   }
 
   return (
@@ -66,7 +77,13 @@ function Header({isLogin, setIsLogin, setQuery, setAuthenticate}) {
         <div className="col search">
           <div className="input-area">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
-            <input type="text" placeholder="검색"/>
+            <input
+              ref={searchInputRef} 
+              type="text"
+              placeholder="검색"
+              defaultValue={searchValue || ''}
+              onKeyUp={(e) => search(e)}
+              />
           </div>
           <div className="recomm-search">
             {recommSearchList.map(recomm => (

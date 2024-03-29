@@ -13,7 +13,7 @@ function Login({ setIsLogin }) {
   // 이미 저장된 이메일이 있으면 가져오기
   const getUserEmail = () => {
     const localStorageUserEmail = JSON.parse(localStorage.getItem('userEmail'));
-    setUserEmail(localStorageUserEmail?.email || "");
+    if(localStorageUserEmail) setUserEmail(localStorageUserEmail.email || "");
   }
 
   // 이메일 input 값 받아오기

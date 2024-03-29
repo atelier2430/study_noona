@@ -2,10 +2,11 @@ import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faBars } from '@fortawesome/free-solid-svg-icons'
 import Logo from './Logo'
 
 function Header({isLogin, setIsLogin, setAuthenticate}) {
+  const [openMoMenu, setOpenMoMenu] = useState(false)
   const searchInputRef = useRef()
   const [searchValue, setSearchValue] = useState(null)
   const navigate = useNavigate()
@@ -42,6 +43,10 @@ function Header({isLogin, setIsLogin, setAuthenticate}) {
     navigate('/hnm')
   }
 
+  const toggleMoMenu = () => {
+    setOpenMoMenu(!openMoMenu)
+  }
+
   const onClickRecommSearch = (word) => {
     searchInputRef.current.focus();
     setSearchValue('');
@@ -69,7 +74,11 @@ function Header({isLogin, setIsLogin, setAuthenticate}) {
         <Logo />H&M
       </button>
       <div className="menu-area">
-        <div className="col menu">
+        <div className={`col menu ${openMoMenu?'open':''}`}>
+          <button type="button" className="btn-menu" onClick={() => toggleMoMenu()}>
+            <FontAwesomeIcon icon={faBars}/>
+            <span>모바일메뉴</span>
+          </button>
           <ul className="menu-list">
             {menuList && menuList.map((menu)=> <li key={menu.id}><Link to="/hnm" className="menu">{menu.title}</Link></li>)}
           </ul>

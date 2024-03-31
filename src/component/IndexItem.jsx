@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCrown } from '@fortawesome/free-solid-svg-icons'
 
 function IndexItem({
-  week, title, standardDate, dueDate, submittedDate, pass, url,
+  week, title, standardDate, dueDate, submittedDate, pass, crown, url,
 }) {
   return (
     <li className={`item ${dueDate && 'has-assign'}`}>
@@ -27,6 +29,7 @@ function IndexItem({
             <span className={(pass && submittedDate)?'pass':''}>
               {submittedDate || '-'}
             </span>
+            {crown && <FontAwesomeIcon icon={faCrown} className="crown"/>}
           </span>
         </span>
       </Link>

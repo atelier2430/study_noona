@@ -215,6 +215,7 @@ strong {
   width: 380px;
 }
 .wrap .list .item .date {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -262,6 +263,12 @@ strong {
   font-weight: 800;
   color: #35b4c5;
   opacity: 0.6;
+}
+.wrap .list .item .date .crown {
+  position: absolute;
+  top: 3px;
+  left: -2px;
+  color: #ffc73a;
 }
 
 .loading-area {

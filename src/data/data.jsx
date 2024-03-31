@@ -10,6 +10,7 @@ const AssignmentData = [
         dueDate: '',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -19,6 +20,7 @@ const AssignmentData = [
         dueDate: '24.03.20 (화)',
         submittedDate: '24.03.19 (화)',
         pass: true,
+        crown: true,
         url: 'rock-paper-scissors',
       },
       {
@@ -28,6 +30,7 @@ const AssignmentData = [
         dueDate: '24.03.21 (수)',
         submittedDate: '24.03.19 (화)',
         pass: true,
+        crown: false,
         url: 'rock-paper-scissors',
       },
       {
@@ -37,6 +40,7 @@ const AssignmentData = [
         dueDate: '24.03.22 (금)',
         submittedDate: '24.03.22 (목)',
         pass: true,
+        crown: false,
         url: 'rock-paper-scissors-class',
       },
       {
@@ -46,6 +50,7 @@ const AssignmentData = [
         dueDate: '',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -55,6 +60,7 @@ const AssignmentData = [
         dueDate: '24.03.24 (일)',
         submittedDate: '24.03.23 (토)',
         pass: true,
+        crown: true,
         url: 'weather',
       },
       {
@@ -64,6 +70,7 @@ const AssignmentData = [
         dueDate: '24.03.25 (월)',
         submittedDate: '24.03.24 (일)',
         pass: true,
+        crown: false,
         url: 'weather',
       },
     ]
@@ -79,6 +86,7 @@ const AssignmentData = [
         dueDate: '',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -88,6 +96,7 @@ const AssignmentData = [
         dueDate: '24.03.28 (목)',
         submittedDate: '24.03.28 (목)',
         pass: true,
+        crown: false,
         url: 'hnm',
       },
       {
@@ -97,6 +106,7 @@ const AssignmentData = [
         dueDate: '24.03.29 (금)',
         submittedDate: '24.03.29 (금)',
         pass: true,
+        crown: true,
         url: 'hnm',
       },
       {
@@ -106,6 +116,7 @@ const AssignmentData = [
         dueDate: '24.03.30 (토)',
         submittedDate: '24.03.30 (토)',
         pass: true,
+        crown: true,
         url: 'hnm',
       },
       {
@@ -115,6 +126,7 @@ const AssignmentData = [
         dueDate: '24.04.01 (월)',
         submittedDate: '24.03.31 (일)',
         pass: true,
+        crown: false,
         url: 'redux',
       },
     ]
@@ -130,6 +142,7 @@ const AssignmentData = [
         dueDate: '24.04.02 (화)',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -139,6 +152,7 @@ const AssignmentData = [
         dueDate: '24.04.03 (수)',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -148,6 +162,7 @@ const AssignmentData = [
         dueDate: '24.04.04 (목)',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -157,6 +172,7 @@ const AssignmentData = [
         dueDate: '',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -166,6 +182,7 @@ const AssignmentData = [
         dueDate: '',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -175,6 +192,7 @@ const AssignmentData = [
         dueDate: '24.04.07 (일)',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -184,6 +202,7 @@ const AssignmentData = [
         dueDate: '24.04.08 (월)',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
     ]
@@ -199,6 +218,7 @@ const AssignmentData = [
         dueDate: '24.04.09 (화)',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -208,6 +228,7 @@ const AssignmentData = [
         dueDate: '24.04.10 (수)',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -217,6 +238,7 @@ const AssignmentData = [
         dueDate: '24.04.11 (목)',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -226,6 +248,7 @@ const AssignmentData = [
         dueDate: '24.04.13 (토)',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
       {
@@ -235,6 +258,7 @@ const AssignmentData = [
         dueDate: '',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
     ]
@@ -250,6 +274,7 @@ const AssignmentData = [
         dueDate: '',
         submittedDate: '',
         pass: false,
+        crown: false,
         url: '',
       },
     ]

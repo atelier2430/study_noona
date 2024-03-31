@@ -113,9 +113,9 @@ const AssignmentData = [
         title: '8. Redux: 게임 체인져 1강~6강',
         standardDate: '24.03.31 (일)',
         dueDate: '24.04.01 (월)',
-        submittedDate: '',
-        pass: false,
-        url: '',
+        submittedDate: '24.03.31 (일)',
+        pass: true,
+        url: 'redux',
       },
     ]
   },

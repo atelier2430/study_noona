@@ -16,6 +16,7 @@ module.exports = {
     "jsxBracketSameLine": "off",
     "jsxSingleQuote": "off",
     "endOfLine": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "default-param-last": 0
   }
 };

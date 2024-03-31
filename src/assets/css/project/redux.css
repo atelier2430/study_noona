@@ -1,0 +1,129 @@
+.vt323-regular {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.redux-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-machine {
+  position: relative;
+  max-height: 100vh;
+}
+.game-machine img {
+  width: auto;
+  height: 100%;
+  max-height: 100vh;
+}
+.game-machine .monitor {
+  position: absolute;
+  top: 25%;
+  bottom: 30%;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0000ff;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.game-machine .monitor .text {
+  font-family: "VT323", monospace;
+  font-weight: 600;
+  font-style: normal;
+  color: #17a9e2;
+  text-shadow: -1px 0 #fff, 0 1px #111c75, 1px 0 #111c75, 0 -1px #fff;
+}
+.game-machine .monitor .text.top {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: clamp(10px, 5vw, 50px);
+}
+.game-machine .monitor .text.count {
+  font-size: clamp(40px, 20vw, 200px);
+}
+.game-machine .monitor .warning-box {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  font-family: "VT323", monospace;
+  font-weight: 600;
+  font-size: clamp(10px, 5vw, 50px);
+  color: #e21765;
+  white-space: nowrap;
+}
+.game-machine .btn-reset {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  padding: 5px 10px;
+  font-size: clamp(6px, 3vw, 30px);
+  border: 3px solid #a9fbf1;
+  border-radius: 5px;
+  box-shadow: 3px 3px #111c75;
+}
+.game-machine .btn-reset:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+  -webkit-transform: translate(3px, 3px);
+  -moz-transform: translate(3px, 3px);
+  -ms-transform: translate(3px, 3px);
+  -o-transform: translate(3px, 3px);
+}
+.game-machine .btn-area {
+  position: absolute;
+  top: 73.75%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  width: 100%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  font-size: 0;
+}
+.game-machine .btn-area .btn-arrow {
+  position: relative;
+  width: 10%;
+}
+.game-machine .btn-area .btn-arrow img:nth-child(2) {
+  display: none;
+}
+.game-machine .btn-area .btn-arrow:active img:nth-child(2) {
+  display: block;
+}
+.game-machine .btn-area .btn-arrow:active img:nth-child(1) {
+  display: none;
+}
+.game-machine .btn-area .btn-arrow span {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "VT323", monospace;
+  font-weight: 600;
+  font-size: 50px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  color: #fff;
+}

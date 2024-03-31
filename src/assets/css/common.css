@@ -322,6 +322,10 @@ strong {
     flex: 0;
     text-align: left;
   }
+  .wrap .list .item .date .crown {
+    top: 5px;
+    left: 65px;
+  }
 }
 
 .btn-black {

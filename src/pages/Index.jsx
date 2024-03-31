@@ -58,6 +58,7 @@ function Index() {
                   dueDate={item.dueDate}
                   submittedDate={item.submittedDate}
                   pass={item.pass}
+                  crown={item.crown}
                   url={item.url}
                 />
               ))}

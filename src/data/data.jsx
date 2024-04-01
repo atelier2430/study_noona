@@ -126,7 +126,7 @@ const AssignmentData = [
         dueDate: '24.04.01 (월)',
         submittedDate: '24.03.31 (일)',
         pass: true,
-        crown: false,
+        crown: true,
         url: 'redux',
       },
     ]

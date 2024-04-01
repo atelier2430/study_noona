@@ -140,10 +140,10 @@ const AssignmentData = [
         title: '9. 네번째 프로젝트: 연락처 페이지 만들기 (Redux ver.) 1강~8강',
         standardDate: '24.04.01 (월)',
         dueDate: '24.04.02 (화)',
-        submittedDate: '',
-        pass: false,
+        submittedDate: '24.04.02 (화)',
+        pass: true,
         crown: false,
-        url: '',
+        url: 'phonebook',
       },
       {
         id: 14,

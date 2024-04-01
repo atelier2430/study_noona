@@ -1,0 +1,23 @@
+.phone-book-wrap {
+  padding: 60px 0;
+  height: 100vh;
+  font-size: 16px;
+}
+.phone-book-wrap h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+.phone-book-wrap .search-box {
+  margin-bottom: 20px;
+}
+.phone-book-wrap .search-box .btn-search {
+  display: block;
+}
+.contact-item {
+  margin-bottom: 10px;
+}
+.contact-item .name {
+  margin-bottom: 5px;
+  font-weight: 700;
+}

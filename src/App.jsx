@@ -12,6 +12,7 @@ import LoginNoona from './pages/shopping/LoginNoona';
 import ProductAll from './pages/shopping/ProductAll';
 import PrivateRoute from './route/PrivateRoute';
 import Redux from './pages/redux/Redux';
+import Phonebook from './pages/phonebook/Phonebook';
 
 function App() {
   const location = useLocation();
@@ -57,6 +58,7 @@ function App() {
         <Route path="/hnm/login-noona" element={<LoginNoona setAuthenticate={setAuthenticate}/>} />
         <Route path="/hnm/product/:id" element={<PrivateRoute isLogin={isLogin}/>} />
         <Route path="/redux" element={<Redux />} />
+        <Route path="/phonebook" element={<Phonebook />} />
       </Routes>
     </div>
   );

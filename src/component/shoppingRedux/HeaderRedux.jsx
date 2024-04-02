@@ -3,9 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faMagnifyingGlass, faBars } from '@fortawesome/free-solid-svg-icons'
+import { useDispatch, useSelector } from 'react-redux';
 import LogoRedux from './LogoRedux';
+import authenciateAction from '../../redux/action/authenciateAction';
 
-function HeaderRedux({isLoginRedux, setIsLoginRedux, setAuthenticateRedux}) {
+function HeaderRedux() {
+  const dispatch = useDispatch()
+  const authenciate = useSelector(state=>state.auth.authenciate)
   const [openMoMenu, setOpenMoMenu] = useState(false)
   const searchInputRef = useRef()
   const [searchValue, setSearchValue] = useState(null)
@@ -23,28 +27,17 @@ function HeaderRedux({isLoginRedux, setIsLoginRedux, setAuthenticateRedux}) {
 
   const recommSearchList = ['와이드', '진', '드레스']
 
-  const goToLogin = () => {
-    if(isLoginRedux) {
-      setIsLoginRedux(false)
-    }
-    
-    navigate('/hnm-redux/login')
-  }
-
-  const goToLoginNoona = () => {
-    if(isLoginRedux) {
-      setAuthenticateRedux(false)
-    }
-    
-    navigate('/hnm-redux/login-noona')
-  }
-
-  const goToHome = () => {
-    navigate('/hnm-redux')
-  }
-
   const toggleMoMenu = () => {
     setOpenMoMenu(!openMoMenu)
+  }
+
+  const loginout = () => {
+    console.log(authenciate)
+    if(authenciate){
+      dispatch(authenciateAction.logout())
+    } else {
+      navigate('/hnm-redux/login')
+    }
   }
 
   const onClickRecommSearch = (word) => {
@@ -62,15 +55,11 @@ function HeaderRedux({isLoginRedux, setIsLoginRedux, setAuthenticateRedux}) {
 
   return (
     <div className="hnm-header">
-      <button type="button" className="login-area" onClick={()=>goToLogin()}>
+      <button type="button" className="login-area" onClick={()=>loginout()}>
         <FontAwesomeIcon icon={faUser} />
-        <span>{isLoginRedux ? '로그아웃' : '로그인'}</span>
+        <span>{authenciate ? '로그아웃' : '로그인'}</span>
       </button>
-      <button type="button" className="login-area noona" onClick={()=>goToLoginNoona()}>
-        <FontAwesomeIcon icon={faUser} />
-        <span>{isLoginRedux ? '로그아웃 누나ver' : '로그인 누나ver'}</span>
-      </button>
-      <button type="button" className="logo-area" onClick={() => goToHome()}>
+      <button type="button" className="logo-area" onClick={() => navigate('/hnm-redux')}>
         <LogoRedux />H&M
       </button>
       <div className="menu-area">

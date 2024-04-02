@@ -82,8 +82,8 @@ function App() {
         <Route path="/redux" element={<Redux />} />
         <Route path="/phonebook" element={<Phonebook />} />
         <Route path="/hnm-redux" element={<ProductAllRedux />} />
-        <Route path="/hnm-redux/login" element={<LoginRedux setIsLoginRedux={setIsLoginRedux} />} />
-        <Route path="/hnm-redux/product/:id" element={<PrivateRouteRedux isLoginRedux={isLoginRedux}/>} />
+        <Route path="/hnm-redux/login" element={<LoginRedux />} />
+        <Route path="/hnm-redux/product/:id" element={<PrivateRouteRedux />} />
       </Routes>
     </div>
   );

@@ -1,5 +1,6 @@
 const initialState={
-  productList: []
+  productList: [],
+  productDetail: null
 }
 
 function productReducer(state=initialState, action){
@@ -7,6 +8,8 @@ function productReducer(state=initialState, action){
   switch(type) {
     case 'GET_PRODUCT_SUCCESS':
       return {...state, productList: payload.productList};
+    case 'GET_PRODUCT_DETAIL_SUCCESS':
+      return {...state, productDetail: payload.productDetail};
     default:
       return {...state};
   }

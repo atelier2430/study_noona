@@ -5,6 +5,13 @@ function login(id, password){
   }
 }
 
-const authenciateAction = { login };
+function logout(){
+  return (dispatch, getState) => {
+    dispatch({type:"LOGOUT_SUCCESS"})
+    console.log(getState)
+  }
+}
+
+const authenciateAction = { login, logout };
 
 export default authenciateAction;

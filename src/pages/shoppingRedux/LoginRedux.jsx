@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import authenciateAction from '../../redux/action/authenciateAction'
 
-function LoginRedux({ setIsLoginRedux }) {
+function LoginRedux() {
   const [id, setId] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
@@ -11,7 +11,6 @@ function LoginRedux({ setIsLoginRedux }) {
 
   // 로그인하고 home으로 이동
   const LoginUserRedux = () => {
-    setIsLoginRedux(true)
     navigate('/hnm-redux')
     dispatch(authenciateAction.login(id, password))
   }

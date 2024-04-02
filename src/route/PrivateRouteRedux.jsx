@@ -1,9 +1,11 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
-import ProductDetailRedux from '../pages/shoppingRedux/ProductDetail'
+import { useSelector } from 'react-redux'
+import ProductDetailRedux from '../pages/shoppingRedux/ProductDetailRedux'
 
-function PrivateRouteRedux({isLoginRedux}) {
-  return isLoginRedux ? <ProductDetailRedux />:<Navigate to="/hnm-redux/login"/>
+function PrivateRouteRedux() {
+  const authenciate = useSelector(state=>state.auth.authenciate)
+  return authenciate ? <ProductDetailRedux />:<Navigate to="/hnm-redux/login"/>
 }
 
 export default PrivateRouteRedux

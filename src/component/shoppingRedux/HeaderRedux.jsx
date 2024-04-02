@@ -32,7 +32,6 @@ function HeaderRedux() {
   }
 
   const loginout = () => {
-    console.log(authenciate)
     if(authenciate){
       dispatch(authenciateAction.logout())
     } else {

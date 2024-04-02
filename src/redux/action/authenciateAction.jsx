@@ -1,14 +1,12 @@
 function login(id, password){
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch({type:"LOGIN_SUCCESS", payload: {id, password}})
-    console.log(getState)
   }
 }
 
 function logout(){
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch({type:"LOGOUT_SUCCESS"})
-    console.log(getState)
   }
 }
 

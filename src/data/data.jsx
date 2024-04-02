@@ -150,10 +150,10 @@ const AssignmentData = [
         title: '10. 리덕스 미들웨어 1강~6강',
         standardDate: '24.04.02 (화)',
         dueDate: '24.04.03 (수)',
-        submittedDate: '',
-        pass: false,
+        submittedDate: '24.04.03 (수)',
+        pass: true,
         crown: false,
-        url: '',
+        url: 'hnm-redux',
       },
       {
         id: 15,

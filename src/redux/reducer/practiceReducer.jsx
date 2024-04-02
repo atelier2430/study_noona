@@ -2,7 +2,7 @@ const initialState={
   count: 0,
 }
 
-function contactReducer(state=initialState, action){
+function practiceReducer(state=initialState, action){
   const { type, payload } = action
   switch(type) {
     case 'INCREMENT':
@@ -16,4 +16,4 @@ function contactReducer(state=initialState, action){
   }
 }
 
-export default contactReducer
+export default practiceReducer

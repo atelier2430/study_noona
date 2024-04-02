@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +7,6 @@ import productAction from '../../redux/action/productAction';
 function ProductDetailRedux() {
   const dispatch = useDispatch()
   const product = useSelector(state=>state.product.productDetail)
-  const [price, setPrice] = useState(null)
   
   const { id } = useParams()
   const getProductDetail = async () => {
@@ -15,7 +14,6 @@ function ProductDetailRedux() {
   }
   
   useEffect(()=>{
-    setPrice(null)
     getProductDetail()
   },[])
 
@@ -32,7 +30,7 @@ function ProductDetailRedux() {
         <div className="title">
           <span>{product?product.title:""}</span>
         </div>
-        <div className="price">&#8361; {price}</div>
+        <div className="price">&#8361; {product && product.price}</div>
         <Form.Select aria-label="Default select example">
           <option>사이즈 선택</option>
           {product

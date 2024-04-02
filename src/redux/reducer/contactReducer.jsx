@@ -10,7 +10,7 @@ const initialState={
   searchResultContact: []
 }
 
-function reducer(state=initialState, action){
+function contactReducer(state=initialState, action){
   const { type, payload } = action
   switch(type) {
     case 'INCREMENT':
@@ -28,4 +28,4 @@ function reducer(state=initialState, action){
   }
 }
 
-export default reducer
+export default contactReducer

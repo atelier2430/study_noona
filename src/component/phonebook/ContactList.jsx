@@ -4,8 +4,8 @@ import SearchBox from './SearchBox'
 import ContactItem from './ContactItem'
 
 function ContactList() {
-  const contactList = useSelector(state=>state.contactList)
-  const searchResultContact = useSelector(state=>state.searchResultContact)
+  const contactList = useSelector(state=>state.contact.contactList)
+  const searchResultContact = useSelector(state=>state.contact.searchResultContact)
   
   return (
     <div>

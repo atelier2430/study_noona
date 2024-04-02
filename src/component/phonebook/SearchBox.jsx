@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 function SearchBox() {
   const inputRef = useRef()
-  const contactList = useSelector(state => state.contactList) || []
+  const contactList = useSelector(state => state.contact.contactList) || []
   const dispatch = useDispatch()
   const searchContact = (e) => {
     let result = null;

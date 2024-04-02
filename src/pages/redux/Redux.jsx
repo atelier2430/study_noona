@@ -11,7 +11,7 @@ import btnUpImg from '../../assets/images/project04/btn_up_off.png'
 import btnUpPressImg from '../../assets/images/project04/btn_up_on.png'
 
 function Redux() {
-  const count = useSelector(state=>state.count)
+  const count = useSelector(state=>state.practice.count)
   const dispatch = useDispatch()
 
   const increase = (myNum) => {

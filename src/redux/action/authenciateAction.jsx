@@ -1,12 +1,14 @@
+import { authenciateActions } from "../reducer/authenciateSlice"
+
 function login(id, password){
   return (dispatch) => {
-    dispatch({type:"LOGIN_SUCCESS", payload: {id, password}})
+    dispatch(authenciateActions.login({id, password}))
   }
 }
 
 function logout(){
   return (dispatch) => {
-    dispatch({type:"LOGOUT_SUCCESS"})
+    dispatch(authenciateActions.logout())
   }
 }
 

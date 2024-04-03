@@ -4,6 +4,8 @@ import ReduxBox from '../../component/redux/ReduxBox'
 import WarningBox from '../../component/redux/WarningBox'
 import ResetBotton from '../../component/redux/ResetBotton'
 
+import { counterActions } from '../../redux/reducer/counterReducer'
+
 import gameMachineImg from '../../assets/images/project04/game-machine.png'
 import btnDownImg from '../../assets/images/project04/btn_down_off.png'
 import btnDownPressImg from '../../assets/images/project04/btn_down_on.png'
@@ -11,15 +13,15 @@ import btnUpImg from '../../assets/images/project04/btn_up_off.png'
 import btnUpPressImg from '../../assets/images/project04/btn_up_on.png'
 
 function Redux() {
-  const count = useSelector(state=>state.practice.count)
+  const count = useSelector(state=>state.counter.count)
   const dispatch = useDispatch()
 
   const increase = (myNum) => {
-    dispatch({type:'INCREMENT', payload: {num: myNum}})
+    dispatch(counterActions.increment({num: myNum}))
   }
 
   const decrease = (myNum) => {
-    dispatch({type:'DECREMENT', payload: {num: myNum}})
+    dispatch(counterActions.decrement({num: myNum}))
   }
 
   return (

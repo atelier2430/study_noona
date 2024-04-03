@@ -1,11 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { counterActions } from '../../redux/reducer/counterReducer'
 
 function ResetBotton() {
   const dispatch = useDispatch()
 
   const reset = () => {
-    dispatch({type: "COUNT_RESET"})
+    dispatch(counterActions.countReset())
   }
 
   return (

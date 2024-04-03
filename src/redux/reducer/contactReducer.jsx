@@ -1,6 +1,6 @@
+import { createSlice } from '@reduxjs/toolkit'
+
 const initialState={
-  count: 0,
-  num: 0,
   contactList: [
     { name: '홍길동', phoneNumber: '01012128989', email: 'hong@gmail.com' },
     { name: '김가네', phoneNumber: '01032325454', email: 'kim@gmail.com' },
@@ -10,22 +10,20 @@ const initialState={
   searchResultContact: []
 }
 
-function contactReducer(state=initialState, action){
-  const { type, payload } = action
-  switch(type) {
-    case 'INCREMENT':
-      return {...state, count: Math.min(20,state.count + payload.num)};
-    case 'DECREMENT':
-      return {...state, count: Math.max(-20, state.count - payload.num)};
-    case 'COUNT_RESET':
-      return {...state, count: 0};
-    case 'ADD_CONTACT':
-      return {...state, contactList: [...state.contactList, { name: payload.name, phoneNumber: payload.phoneNumber, email: payload.email }]};
-    case 'SEARCH_CONTACT':
-      return {...state, searchResultContact: payload.result};
-    default:
-      return {...state};
+const contactSlice = createSlice({
+  name: 'contact',
+  initialState,
+  reducers: {
+    addContact(state, action){
+      // eslint-disable-next-line no-param-reassign
+      state.contactList = [...state.contactList, { name: action.payload.name, phoneNumber: action.payload.phoneNumber, email: action.payload.email }]
+    },
+    searchContact(state, action){
+      // eslint-disable-next-line no-param-reassign
+      state.searchResultContact = action.payload.result
+    }
   }
-}
+})
 
-export default contactReducer
+export const contactActions = contactSlice.actions
+export default contactSlice.reducer

@@ -1,6 +1,7 @@
 import React, { useRef }from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
+import { contactActions } from '../../redux/reducer/contactReducer'
 
 function SearchBox() {
   const inputRef = useRef()
@@ -15,7 +16,7 @@ function SearchBox() {
     } else {
       return;
     }
-    dispatch({type: 'SEARCH_CONTACT', payload: { result }})
+    dispatch(contactActions.searchContact({ result }))
   }
   return (
     <Row className="search-box">

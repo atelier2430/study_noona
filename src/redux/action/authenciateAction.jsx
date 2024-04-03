@@ -1,4 +1,4 @@
-import { authenciateActions } from "../reducer/authenciateReducer"
+import { authenciateActions } from "../reducer/authenciateSlice"
 
 function login(id, password){
   return (dispatch) => {

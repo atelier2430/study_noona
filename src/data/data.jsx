@@ -163,7 +163,7 @@ const AssignmentData = [
         submittedDate: '24.04.04 (목)',
         pass: true,
         crown: false,
-        url: '',
+        url: 'hnm-redux',
       },
       {
         id: 16,

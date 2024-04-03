@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchSingleProduct } from '../../redux/reducer/productReducer';
+import { fetchSingleProduct } from '../../redux/reducer/productSlice';
 import LoadingComp from '../../component/common/Loading';
 
 function ProductDetailRedux() {

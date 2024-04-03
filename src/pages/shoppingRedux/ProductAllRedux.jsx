@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../redux/reducer/productReducer';
+import { fetchProducts } from '../../redux/reducer/productSlice';
 import ProductItemRedux from '../../component/shoppingRedux/ProductItem';
 import LoadingComp from '../../component/common/Loading';
 

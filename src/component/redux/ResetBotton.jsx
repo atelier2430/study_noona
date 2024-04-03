@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { counterActions } from '../../redux/reducer/counterReducer'
+import { counterActions } from '../../redux/reducer/counterSlice'
 
 function ResetBotton() {
   const dispatch = useDispatch()

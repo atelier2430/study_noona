@@ -1,7 +1,7 @@
 import React, { useRef }from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { contactActions } from '../../redux/reducer/contactReducer'
+import { contactActions } from '../../redux/reducer/contactSlice'
 
 function SearchBox() {
   const inputRef = useRef()

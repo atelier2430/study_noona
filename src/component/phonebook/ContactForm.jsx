@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
-import { contactActions } from '../../redux/reducer/contactReducer';
+import { contactActions } from '../../redux/reducer/contactSlice';
 
 function ContactForm() {
   const [name, setName] = useState('');

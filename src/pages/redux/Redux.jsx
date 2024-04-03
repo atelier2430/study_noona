@@ -4,7 +4,7 @@ import ReduxBox from '../../component/redux/ReduxBox'
 import WarningBox from '../../component/redux/WarningBox'
 import ResetBotton from '../../component/redux/ResetBotton'
 
-import { counterActions } from '../../redux/reducer/counterReducer'
+import { counterActions } from '../../redux/reducer/counterSlice'
 
 import gameMachineImg from '../../assets/images/project04/game-machine.png'
 import btnDownImg from '../../assets/images/project04/btn_down_off.png'

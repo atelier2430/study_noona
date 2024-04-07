@@ -17,6 +17,11 @@ import HeaderRedux from './component/shoppingRedux/HeaderRedux';
 import LoginRedux from './pages/shoppingRedux/LoginRedux';
 import ProductAllRedux from './pages/shoppingRedux/ProductAllRedux';
 import PrivateRouteRedux from './route/PrivateRouteRedux';
+import MovieAppLayout from './movie_layout/MovieAppLayout';
+import MovieHomepage from './movie_pages/MovieHomepage/MovieHomepage';
+import MoviePage from './movie_pages/Movies/MoviePage';
+import MovieDetailPage from './movie_pages/MovieDetail/MovieDetailPage';
+import NotFoundPage from './NotFoundPage/NotFoundPage';
 
 function App() {
   const location = useLocation();
@@ -51,7 +56,7 @@ function App() {
   return (
     <div>
       {/* 홈을 제외하고 뒤로가기 출력 */}
-      {currPathName !== "/" && <Link to="/" className="back">과제 목록으로 돌아가기</Link>}
+      {currPathName !== "/" && <Link to="/" className="back" />}
       {/* hnm 쇼핑몰 일때만 Header 출력 */}
       {currPathName.includes('hnm') && !currPathName.includes('hnm-redux') && (
         <Header
@@ -84,6 +89,24 @@ function App() {
         <Route path="/hnm-redux" element={<ProductAllRedux />} />
         <Route path="/hnm-redux/login" element={<LoginRedux />} />
         <Route path="/hnm-redux/product/:id" element={<PrivateRouteRedux />} />
+
+        {/*
+          넷플릭스 프로젝트_폴더구조 실무
+          Route 안에 서브로 Route를 쓸 수 있음
+          */}
+        {/*
+        / > 홈페이지
+        /movies > 영화 전체 페이지 (서치)
+        /movies/:id > 영화 디테일 페이지
+        /movies/:id/recommandation > 추천 영화
+        /movies/:id/reviews > 리뷰
+          */}
+        <Route path="/movie" element={<MovieAppLayout />} >
+          <Route index element={<MovieHomepage />}/>
+          <Route path="movies" element={<MoviePage />}/>
+          <Route pate="movies/:id" element={<MovieDetailPage />}/>
+        </Route>
+        <Route path="*" element={<NotFoundPage />}/>
       </Routes>
     </div>
   );

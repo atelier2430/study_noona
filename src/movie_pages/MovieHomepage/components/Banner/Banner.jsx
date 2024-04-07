@@ -12,7 +12,6 @@ function Banner() {
     if(isError) {
       <Alert variant="danger">{error.message}</Alert>
     }
-    console.log('ddd', data)
   return (
     <div
       style={{backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.results[0].poster_path})`}}

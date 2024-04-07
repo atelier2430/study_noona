@@ -1,0 +1,15 @@
+.movie-page {
+    min-height: 100vh;
+    background-color: rgb(33, 37, 41);
+    color: #fff;
+}
+
+.movie-page .movie-nav-dark,
+.movie-page .movie-nav {
+    padding: 10px 20px 10px 40px;
+    background-color: rgb(33, 37, 41);
+}
+
+.movie-page .navbar-brand {
+    width: 120px;
+}

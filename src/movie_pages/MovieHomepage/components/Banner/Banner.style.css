@@ -1,0 +1,33 @@
+.movie-banner {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    width: 100%;
+    height: 56vw;
+    padding: 5vw;
+    background-position: top center;
+    background-size: cover;
+}
+.movie-banner::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(1, 1, 1, 1.0), rgba(255, 255, 255, 0.0));
+}
+.movie-banner .text-area {
+    position: relative;
+}
+.movie-banner .text-area h2 {
+    width: 50%;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+}
+.movie-banner .text-area p {
+    width: 80%;
+    font-size: 2rem;
+    font-weight: 500;
+}

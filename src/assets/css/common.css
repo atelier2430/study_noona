@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 10px;
   font-weight: 500;
   color: #1b1b1b;
@@ -373,4 +373,17 @@ strong {
   background-image: url('../images/project03/view-big.png');
 }.icon.view-small {
   background-image: url('../images/project03/view-small.png');
+}
+
+/* not found page */
+.page-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 10vw;
+  background-color: #f4f4f4;
+  background-image: -webkit-linear-gradient(to right, #f4f4f4, #ffffff);
+  background-image: linear-gradient(to right, #f4f4f4, #ffffff);
 }

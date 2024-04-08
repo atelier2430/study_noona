@@ -13,3 +13,8 @@
 .movie-page .navbar-brand {
     width: 120px;
 }
+
+.movie-page .list-title {
+    padding: 2rem 5rem;
+    font-size: 3rem;
+}

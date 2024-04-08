@@ -14,15 +14,15 @@ function Banner() {
     }
   return (
     <div
-      style={{backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.results[0].poster_path})`}}
+      style={{backgroundImage: `url(https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/${data && data.results[0].poster_path})`}}
       className="movie-banner"
     >
       <div className="text-area text-white">
         <h2>
-          {data?.results[0].title}
+          {data && data.results[0].title}
         </h2>
         <p>
-          {data?.results[0].overview}
+          {data && data.results[0].overview}
         </p>
       </div>
     </div>

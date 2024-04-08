@@ -1,5 +1,6 @@
 import React from 'react'
 import Banner from './components/Banner/Banner'
+import PopularMovieSlide from './components/PopularMovieSlide/PopularMovieSlide'
 
 // 1. 배너 > Top Popular 1위
 // 2. Popular Movie
@@ -8,7 +9,10 @@ import Banner from './components/Banner/Banner'
 
 function MovieHomepage() {
   return (
-    <div><Banner /></div>
+    <div>
+      <Banner />
+      <PopularMovieSlide />
+    </div>
   )
 }
 

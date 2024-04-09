@@ -52,6 +52,7 @@ li:not([class*="-active"]) + li[class*="-active"] .movie-info::after {
     position: absolute;
     top: 10px;
     left: 10px;
+    right: 10px;
     color: #fff;
 }
 .adult {
@@ -68,6 +69,7 @@ li:not([class*="-active"]) + li[class*="-active"] .movie-info::after {
 .genre-list {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 5px;
 }
 .genre-list .genre {

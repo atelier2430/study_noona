@@ -6,6 +6,7 @@
     height: 41.6666vw;
     padding: 5vw;
     background-position: top center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 .movie-banner::before {
@@ -31,4 +32,29 @@
     font-size: 2rem;
     font-weight: 500;
     word-break: keep-all;
+}
+
+@media all and (max-width: 1024px){
+    .movie-banner {
+        background-size: contain;
+        /* height: 100vw; */
+        height: max-content;
+    }
+    .movie-banner .text-area {
+        display: -webkit-box;
+        padding-top: 41.6666vw;
+        word-wrap: break-word;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .movie-banner .text-area h2 {
+        width: 100%;
+        font-size: 3.4rem;
+    }
+    .movie-banner .text-area p {
+        width: 100%;
+        font-size: 2rem;
+    }
 }

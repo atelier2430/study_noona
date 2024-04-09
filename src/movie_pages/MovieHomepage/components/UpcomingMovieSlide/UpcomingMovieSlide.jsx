@@ -1,14 +1,14 @@
 import React from 'react';
 import { Alert } from 'react-bootstrap';
-import usePopularMoviesQuery from '../../../../hooks/usePopularMovies';
+import useUpcomingdMoviesQuery from '../../../../hooks/useUpcomingdMovies'
 import LoadingComp from '../../../../component/common/Loading';
 import MovieSlider from '../../../../common/MovieSlider/MovieSlider';
 import responsive from '../../../../constants/responsive';
 
 
 
-function PopularMovieSlide() {
-    const { data, isLoading, isError, error } = usePopularMoviesQuery()
+function UpcomingMovieSlide() {
+    const { data, isLoading, isError, error } = useUpcomingdMoviesQuery()
     if(isLoading){
         <LoadingComp />
     }
@@ -17,9 +17,9 @@ function PopularMovieSlide() {
     }
     return (
         <div className="slide-container">
-            {data && <MovieSlider title="Popular Movies" movies={data.results} responsive={responsive}/>}
+            {data && <MovieSlider title="Upcoming Movies" movies={data.results} responsive={responsive}/>}
         </div>
     )
 }
 
-export default PopularMovieSlide
+export default UpcomingMovieSlide

@@ -378,6 +378,7 @@ strong {
 /* not found page */
 .page-404 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -386,4 +387,13 @@ strong {
   background-color: #f4f4f4;
   background-image: -webkit-linear-gradient(to right, #f4f4f4, #ffffff);
   background-image: linear-gradient(to right, #f4f4f4, #ffffff);
+}
+.page-404 img {
+  width: auto;
+  max-height: 60vh;
+}
+.page-404 .history-back {
+  padding: 2rem;
+  font-size: 3rem;
+  text-decoration: underline;
 }

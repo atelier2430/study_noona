@@ -9,9 +9,11 @@
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
     word-break: keep-all;
+}
+.slide-container .movie-card {
     opacity: 0.2;
 }
-li[class*="-active"] .movie-card {
+.slide-container li[class*="-active"] .movie-card {
     opacity: 1;
 }
 .movie-info {

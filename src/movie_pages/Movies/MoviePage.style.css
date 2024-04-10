@@ -1,0 +1,29 @@
+.pagination {
+    justify-content: center;
+    padding: 3rem 0;
+}
+.disabled>.page-link,
+.page-link {
+    border: 0 none;
+    background-color: transparent;
+    color: #fff;
+    opacity: 0.2;
+}
+.disabled>.page-link {
+    background-color: transparent;
+}
+.active>.page-link,
+.page-link.active {
+    border: 0 none;
+    background-color: transparent;
+    opacity: 1;
+}
+.page-link:hover {
+    color: #fff;
+    background-color: transparent;
+    opacity: 1;
+}
+
+.filter-area {
+    padding: 3rem 2rem;
+}

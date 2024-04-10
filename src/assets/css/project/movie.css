@@ -11,5 +11,6 @@
 }
 
 .movie-page .navbar-brand {
+    display: block;
     width: 120px;
 }

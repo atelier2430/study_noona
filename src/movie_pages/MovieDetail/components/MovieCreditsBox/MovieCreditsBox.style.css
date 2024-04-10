@@ -1,0 +1,58 @@
+.credit-box {
+    padding: 5rem 0;
+}
+.credit-title {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+.credit-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 1.4rem;
+}
+.credit {
+    width: 10rem;
+}
+.credit .img-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 138 / 175;
+    vertical-align: middle;
+    background-color: #b5b5b5;
+}
+.credit .name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    word-break: keep-all;
+}
+.credit .name strong {
+    font-size: 700;
+}
+.credit .name span {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+@media all and (max-width: 1024px){
+    .credit-box {
+        padding: 2rem 0;
+    }
+    .credit-title {
+        margin-bottom: 1.2rem;
+        font-size: 1.6rem;
+    }
+    .credit {
+        width: calc(33% - 1rem);
+    }
+    .credit .name {
+        font-size: 1.4rem;
+    }
+    .credit .name span {
+        font-size: 1.2rem;
+    }
+}

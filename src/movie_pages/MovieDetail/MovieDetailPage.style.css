@@ -1,0 +1,148 @@
+.movie-detail {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+    background-color: rgb(33, 37, 41);
+    overflow: hidden;
+}
+.movie-detail::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 30vw;
+    left: -25%;
+    width: 150%;
+    height: 50vh;
+    background-color: rgb(33, 37, 41);
+    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+}
+.movie-detail .info-box {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5rem;
+}
+.movie-detail .poster-area {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    width: 100%;
+}
+.movie-detail .poster-area .poster {
+    width: 30%;
+}
+.movie-detail .title-area {
+    padding: 2rem;
+}
+.movie-detail .title-area .title {
+    font-size: 4rem;
+    font-weight: 700;
+}
+.movie-detail .title-area .genre-area {
+    display: flex;
+    gap: 4rem;
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+}
+.movie-detail .title-area .genre-area .genre {
+    position: relative;
+    font-size: 2rem;
+}
+.movie-detail .title-area .genre-area .genre:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+    display: block;
+    width: 1px;
+    height: 1.8rem;
+    background-color: rgba(255,255,255,0.5);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.movie-detail .title-area .star-area {
+    position: relative;
+    width: 20rem;
+    height: 4rem;
+    margin-top: 2rem;
+    background-image: url('../../assets/images/project05_movie/star-bg.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    font-size: 0;
+}
+.movie-detail .title-area .star-area .star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-image: url('../../assets/images/project05_movie/star.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+.movie-detail .info-box .overview {
+    position: relative;
+    width: 100%;
+    padding: 3rem 1rem 2rem;
+    font-size: 2rem;
+}
+
+@media all and (max-width: 1024px){
+    .movie-detail::before {
+        top: 34vw;
+        transform: rotate(8deg);
+        -webkit-transform: rotate(8deg);
+        -moz-transform: rotate(8deg);
+        -ms-transform: rotate(8deg);
+        -o-transform: rotate(8deg);
+}
+    .movie-detail .info-box {
+        padding: 2rem;
+    }
+    .movie-detail .poster-area {
+        gap: 1rem;
+    }
+    .movie-detail .poster-area .poster {
+        flex-shrink: 0;
+        width: 50%;
+    }
+    .movie-detail .title-area {
+        width: 50%;
+        padding: 1rem;
+    }
+    .movie-detail .title-area .title {
+        font-size: 2rem;
+        text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+        word-break: keep-all;
+    }
+    .movie-detail .title-area .genre-area {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+    .movie-detail .title-area .genre-area .genre {
+        font-size: 1.5rem;
+    }
+    .movie-detail .title-area .genre-area .genre:not(:last-child)::after {
+        display: none;
+    }
+    .movie-detail .title-area .star-area {
+        width: 10rem;
+        height: 2rem;
+        margin-top: 1rem;
+    }
+    .movie-detail .info-box .overview {
+        width: 100%;
+        padding: 3rem 1rem 2rem;
+        font-size: 1.6rem;
+    }
+}

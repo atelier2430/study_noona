@@ -15,6 +15,7 @@ function PopularMovieSlide() {
     if(isError) {
         <Alert variant="danger">{error.message}</Alert>
     }
+
     return (
         <div className="slide-container">
             {data && <MovieSlider title="Popular Movies" movies={data.results} responsive={responsive}/>}

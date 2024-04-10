@@ -1,9 +1,11 @@
 import React from 'react'
 import './MovieCard.style.css'
+import { useNavigate } from 'react-router-dom'
 import useMovieGenreQuery from '../../hooks/useMovieGenre'
 
 function MovieCard({movie}) {
     const { data:genreData } = useMovieGenreQuery()
+    const navigate = useNavigate()
 
     const showGenre = (genreIdList) => {
         if(!genreData) return []
@@ -12,10 +14,16 @@ function MovieCard({movie}) {
                                 .map((genre) => genre.name)
         return genreNameList
     }
+
+    const goToMovieDetail = () => {
+        navigate(`/movie/movies/${movie?movie.id:''}`)
+    }
     return (
-        <div
+        <button
+            type="button"
             style={{backgroundImage: `url(https://media.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path})`}}
             className='movie-card'
+            onClick={goToMovieDetail}
         >
             <div className="movie-info">
                 <div className="text-info-area">
@@ -33,7 +41,7 @@ function MovieCard({movie}) {
                 <h4 className='movie-title'>{movie.title}</h4>
                 <div className="release">{movie.release_date} 개봉</div>
             </div>
-        </div>
+        </button>
     )
 }
 

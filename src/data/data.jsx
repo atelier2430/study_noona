@@ -228,7 +228,7 @@ const AssignmentData = [
         dueDate: '24.04.10 (수)',
         submittedDate: '24.04.10 (수)',
         pass: true,
-        crown: false,
+        crown: true,
         url: 'movie',
       },
       {
@@ -236,10 +236,10 @@ const AssignmentData = [
         title: '12. Netflix 만들기 13강~14강',
         standardDate: '24.04.10 (수)',
         dueDate: '24.04.11 (목)',
-        submittedDate: '',
-        pass: false,
+        submittedDate: '24.04.11 (목)',
+        pass: true,
         crown: false,
-        url: '',
+        url: 'movie',
       },
       {
         id: 23,

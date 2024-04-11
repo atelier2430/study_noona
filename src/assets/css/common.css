@@ -5,6 +5,31 @@ body {
   font-weight: 500;
   color: #1b1b1b;
 }
+body::-webkit-scrollbar {
+  width: 18px;
+  height: 100%;
+  background-color: rgb(33, 37, 41);
+}
+body::-webkit-scrollbar-track {
+  background-color: rgb(33, 37, 41);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+  border-radius: 500px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+  border-radius: 500px;
+}
 
 b,
 strong {

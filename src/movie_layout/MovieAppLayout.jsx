@@ -47,7 +47,7 @@ function MovieAppLayout() {
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
               />
-              <Button variant="outline-danger">Search</Button>
+              <Button variant="outline-danger" onClick={searchByKeyword}>Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

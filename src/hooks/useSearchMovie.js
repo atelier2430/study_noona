@@ -3,8 +3,8 @@ import api from "../utils/api"
 
 const fetchSearchMovie = ({keyword, page}) => (
         keyword
-        ? api.get(`/search/movie?query=${keyword}&page=${page}`)
-        : api.get(`/movie/popular?page=${page}`)
+        ? api.get(`/search/movie?query=${keyword}&page=${page}&language=ko-KR`)
+        : api.get(`/movie/popular?page=${page}&language=ko-KR`)
     )
 
 const useSearchMovieQuery = ({keyword, page}) => useQuery({

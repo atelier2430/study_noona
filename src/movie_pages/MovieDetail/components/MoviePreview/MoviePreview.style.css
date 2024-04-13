@@ -1,0 +1,39 @@
+.preview-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    background-color: rgba(33, 37, 41, 0.5);
+    border: 0 none;
+}
+
+.preview-area:checked+.btn,
+.preview-area.active,
+.preview-area.show,
+.preview-area:first-child:active,
+:not(.btn-check)+.preview-area:active,
+.preview-area:active,
+.preview-area:focus,
+.preview-area:hover {
+    background-color: rgba(33, 37, 41, 1);
+}
+.preview-area .preview {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 1px 1px 3px rgba(33, 37, 41, 0.5);
+}
+.preview-area .preview::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-left: 2rem solid #fff;
+    filter: drop-shadow(1px 1px 3px rgba(33, 37, 41, 0.2));
+    -webkit-filter: drop-shadow(1px 1px 3px rgba(33, 37, 41, 0.2));
+}

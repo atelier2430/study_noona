@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Alert } from 'react-bootstrap'
-import useMovieDetail from '../../hooks/useMovieDetail'
+import useMovieDetailQuery from '../../hooks/useMovieDetail'
 import LoadingComp from '../../component/common/Loading'
 import MovieReview from './components/MovieReview/MovieReview'
 import MovieCreditsBox from './components/MovieCreditsBox/MovieCreditsBox'
@@ -12,7 +12,7 @@ import './MovieDetailPage.style.css'
 
 function MovieDetailPage() {
   const { id } = useParams()
-  const { data, isLoading, isError, error } = useMovieDetail({id})
+  const { data, isLoading, isError, error } = useMovieDetailQuery({id})
   if(isLoading){
     <LoadingComp />
   }
@@ -40,7 +40,10 @@ function MovieDetailPage() {
               <span className="star" style={{width:`${data && data.vote_average*10}%`}}>{data && data.vote_average}점</span>
             </div>
           </div>
-          <MoviePreview movie={data && data}/>
+          {data &&
+          <MoviePreview id={data.id} title={data.title}/>
+          }
+          
         </div>
         <div className="overview">
           {data && data.overview}

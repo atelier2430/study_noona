@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Alert } from 'react-bootstrap'
 import LoadingComp from '../../../../component/common/Loading'
-import useMovieReviews from '../../../../hooks/useMovieReview'
+import useMovieReviewQuery from '../../../../hooks/useMovieReview'
 import './MovieReview.style.css'
 
 function MovieReview({id}) {
-    const { data, isLoading, isError, error } = useMovieReviews({id})
+    const { data, isLoading, isError, error } = useMovieReviewQuery({id})
     const [toggledReview, setToggledReview] = useState({});
     if(isLoading){
         <LoadingComp />

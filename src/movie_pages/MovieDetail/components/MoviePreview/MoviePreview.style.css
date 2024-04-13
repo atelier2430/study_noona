@@ -37,3 +37,13 @@
     filter: drop-shadow(1px 1px 3px rgba(33, 37, 41, 0.2));
     -webkit-filter: drop-shadow(1px 1px 3px rgba(33, 37, 41, 0.2));
 }
+
+.custom-modal .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    max-width: unset;
+    height: 100%;
+    margin: 0 auto;
+}

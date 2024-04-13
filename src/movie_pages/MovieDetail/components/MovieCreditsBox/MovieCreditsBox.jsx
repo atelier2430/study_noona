@@ -1,12 +1,12 @@
 import React from 'react'
 import { Alert } from 'react-bootstrap'
 import LoadingComp from '../../../../component/common/Loading'
-import useMovieDetailCast from '../../../../hooks/useMovieDetailCredits'
+import useMovieDetailCreditsQuery from '../../../../hooks/useMovieDetailCredits'
 import './MovieCreditsBox.style.css'
 import defaultProfileImage from '../../../../assets/images/project05_movie/profile.svg'
 
 function MovieCreditsBox({id}) {
-    const { data, isLoading, isError, error } = useMovieDetailCast({id})
+    const { data, isLoading, isError, error } = useMovieDetailCreditsQuery({id})
     if(isLoading){
         <LoadingComp />
     }

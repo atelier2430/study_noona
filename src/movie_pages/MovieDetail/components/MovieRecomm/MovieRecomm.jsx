@@ -1,12 +1,12 @@
 import React from 'react'
 import { Alert } from 'react-bootstrap'
 import LoadingComp from '../../../../component/common/Loading'
-import useMovieRecomm from '../../../../hooks/useMovieRecomm'
+import useMovieRecommQuery from '../../../../hooks/useMovieRecomm'
 import MovieCard from '../../../../common/MovieCard/MovieCard'
 import './MovieRecomm.style.css'
 
 function MovieRecomm({id}) {
-    const { data, isLoading, isError, error } = useMovieRecomm({id})
+    const { data, isLoading, isError, error } = useMovieRecommQuery({id})
     if(isLoading){
         <LoadingComp />
     }

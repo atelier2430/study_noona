@@ -246,10 +246,10 @@ const AssignmentData = [
         title: '12. Netflix 만들기 15강',
         standardDate: '24.04.11 (목)',
         dueDate: '24.04.13 (토)',
-        submittedDate: '',
-        pass: false,
+        submittedDate: '24.04.13 (토)',
+        pass: true,
         crown: false,
-        url: '',
+        url: 'movie',
       },
       {
         id: 24,

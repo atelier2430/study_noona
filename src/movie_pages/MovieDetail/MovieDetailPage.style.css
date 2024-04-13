@@ -48,7 +48,7 @@
 .movie-detail .title-area .genre-area {
     display: flex;
     gap: 4rem;
-    margin-top: 1rem;
+    margin: 1rem 0 2rem;
     padding: 0 0.5rem;
 }
 .movie-detail .title-area .genre-area .genre {
@@ -74,7 +74,6 @@
     position: relative;
     width: 20rem;
     height: 4rem;
-    margin-top: 2rem;
     background-image: url('../../assets/images/project05_movie/star-bg.png');
     background-repeat: no-repeat;
     background-size: auto 100%;
@@ -88,6 +87,34 @@
     background-image: url('../../assets/images/project05_movie/star.png');
     background-repeat: no-repeat;
     background-size: auto 100%;
+}
+.movie-detail .popular-area {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+}
+.movie-detail .popular-area .popular,
+.movie-detail .popular-area .budget {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.movie-detail .popular-area .icon {
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    font-size: 1rem;
+    color: #212529;
+}
+.movie-detail .popular-area .release-date {
+    font-style: italic;
 }
 .movie-detail .info-box .overview {
     position: relative;
@@ -127,7 +154,7 @@
     .movie-detail .title-area .genre-area {
         flex-wrap: wrap;
         gap: 1rem;
-        margin-top: 0.5rem;
+        margin: 0.5rem 0 1rem;
     }
     .movie-detail .title-area .genre-area .genre {
         font-size: 1.5rem;
@@ -138,7 +165,6 @@
     .movie-detail .title-area .star-area {
         width: 10rem;
         height: 2rem;
-        margin-top: 1rem;
     }
     .movie-detail .info-box .overview {
         width: 100%;

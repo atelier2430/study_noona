@@ -18,6 +18,7 @@ function MovieDetailPage() {
       <Alert variant="danger">{error.message}</Alert>
     }
 
+    console.log(data)
   return (
     <div
       className="movie-detail"
@@ -38,15 +39,20 @@ function MovieDetailPage() {
             <div className="star-area">
               <span className="star" style={{width:`${data && data.vote_average*10}%`}}>{data && data.vote_average}점</span>
             </div>
-            <div className="view-area">
-              <span className="view" />
-            </div>
           </div>
         </div>
         <div className="overview">
           {data && data.overview}
         </div>
-        <MovieReview />
+        <div className="popular-area">
+          <div className="popular"><span className="icon">인기</span>{data && data.popularity}</div>
+          <div className="budget">
+              <span className="icon">예산</span>
+              {data && new Intl.NumberFormat('en-US', { style: 'decimal' }).format(data.budget)}
+          </div>
+          <div className="release-date">{data && data.release_date} 개봉</div>
+        </div>
+        <MovieReview id={id} />
         <MovieCreditsBox id={id}/>
       </div>
     </div>

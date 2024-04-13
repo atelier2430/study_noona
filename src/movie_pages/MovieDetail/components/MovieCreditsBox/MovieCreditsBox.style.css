@@ -1,9 +1,5 @@
-.credit-box {
-    padding: 5rem 0;
-}
-.credit-title {
-    margin-bottom: 2rem;
-    font-size: 3rem;
+.credits-area {
+    width: 100%;
 }
 .credit-inner {
     display: flex;

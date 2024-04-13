@@ -1,0 +1,63 @@
+.review {
+    width: 100%;
+    padding: 2.4rem;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 1.4rem;
+    -webkit-border-radius: 1.4rem;
+    -moz-border-radius: 1.4rem;
+    -ms-border-radius: 1.4rem;
+    -o-border-radius: 1.4rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+.review.open,
+.review:hover {
+    background-color: rgba(255,255,255,0.6);
+}
+.review:not(:last-child) {
+    margin-bottom: 2.4rem;
+}
+.review .content {
+    display: -webkit-box;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+.review.open .content {
+    display: block;
+}
+.review .author-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.review .author {
+    font-weight: 700;
+}
+.review .rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.review .rating .star-area {
+    position: relative;
+    width: 9rem;
+    height: 1.8rem;
+    background-image: url('../../../../assets/images/project05_movie/star-bg.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    font-size: 0;
+}
+.review .rating .star-area .star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-image: url('../../../../assets/images/project05_movie/star.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}

@@ -96,6 +96,7 @@ li:not([class*="-active"]) + li[class*="-active"] .movie-info::after {
     line-height: 2.4rem;
     color: #fff;
     text-align: left;
+    word-break: break-word;
 }
 .release {
     margin-top: 5px;

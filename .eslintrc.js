@@ -17,6 +17,7 @@ module.exports = {
     "jsxSingleQuote": "off",
     "endOfLine": "off",
     "react/prop-types": "off",
-    "default-param-last": 0
+    "default-param-last": 0,
+    "jsx-a11y/label-has-associated-control": "off"
   }
 };

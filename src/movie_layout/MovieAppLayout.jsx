@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 import { Outlet, useNavigate } from 'react-router-dom';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Logo from '../assets/images/project05_movie/logo.svg'
+import MicImageOn from '../assets/images/project05_movie/voice-recorder-on.png'
+import MicImageOff from '../assets/images/project05_movie/voice-recorder-off.png'
 
 
 function MovieAppLayout() {
@@ -16,6 +15,24 @@ function MovieAppLayout() {
     e.preventDefault()
     navigate(`movies?q=${keyword}`)
   }
+
+  const {
+    transcript,
+    listening,
+    browserSupportsSpeechRecognition
+  } = useSpeechRecognition();
+
+  if (!browserSupportsSpeechRecognition) {
+    return <span>Browser doesn`&apos;t support speech recognition.</span>;
+  }
+
+  const stopListeningAndSetKeyword = () => {
+    SpeechRecognition.stopListening();
+    setKeyword(transcript);
+    navigate(`movies?q=${transcript}`);
+  }
+
+
   return (
     <div className="movie-page">
       <Navbar
@@ -38,7 +55,16 @@ function MovieAppLayout() {
               <Nav.Link href="/movie">Home</Nav.Link>
               <Nav.Link href="/movie/movies">Movies</Nav.Link>
             </Nav>
-            <Form className="d-flex" onSubmit={searchByKeyword}>
+            <div className="voice-search-area">
+              <div className="microphone">
+                {listening
+                ? <img src={MicImageOn} alt="microphone"/>
+                : <img src={MicImageOff} alt="microphone"/>}
+              </div>
+              <button type="button" onClick={SpeechRecognition.startListening}>Start</button>
+              <button type="button" onClick={stopListeningAndSetKeyword}>Stop</button>
+            </div>
+            <Form className="d-flex search-form" onSubmit={searchByKeyword}>
               <Form.Control
                 type="search"
                 placeholder="Search"
@@ -47,7 +73,7 @@ function MovieAppLayout() {
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
               />
-              <Button variant="outline-danger" onClick={searchByKeyword}>Search</Button>
+              <Button type="submit" variant="outline-danger" onClick={searchByKeyword}>Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import { Alert, Container, Row, Col } from 'react-bootstrap';
@@ -6,25 +6,17 @@ import useSearchMovieQuery from '../../hooks/useSearchMovie'
 import LoadingComp from '../../component/common/Loading';
 import MovieCard from '../../common/MovieCard/MovieCard';
 import MovieFilter from './components/MovieFilter/MovieFilter';
-
-import './MoviePage.style.css'
-
-// 경로 1. navbar에서 클릭 > popular
-// 경로 2. 키워드 검색 > 키워드 관련 영화
+import './MoviePage.style.css';
 
 function MoviePage() {
   const [query, setQuery] = useSearchParams();
   const [page, setPage] = useState(1);
-  const keyword = query.get('q');
+  const keyword = query.get('q')
   const { data, isLoading, isError, error } = useSearchMovieQuery({keyword, page})
   const [sortedMovieList, setSortedMovieList] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
-  if(isLoading){
-      <LoadingComp />
-  }
-  if(isError) {
-      <Alert variant="danger">{error.message}</Alert>
-  }
+  if(isLoading) { <LoadingComp /> }
+  if(isError) { <Alert variant="danger">{error.message}</Alert> }
 
   const handleSortChange = (sortType) => {
     // sortedMovieList가 초기화되지 않았다면 바로 반환해서 불필요하게 로직을 돌지 않게 함
@@ -84,7 +76,6 @@ function MoviePage() {
   const handlePageClick = ({selected}) => {
     setPage(selected+1)
   }
-
 
 
   return (

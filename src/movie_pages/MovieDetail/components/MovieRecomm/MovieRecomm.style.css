@@ -3,3 +3,9 @@
     grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
 }
+
+@media all and (max-width: 1024px){
+    .recomm-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -5,6 +5,7 @@ import { Alert, Container, Row, Col } from 'react-bootstrap';
 import useSearchMovieQuery from '../../hooks/useSearchMovie'
 import LoadingComp from '../../component/common/Loading';
 import MovieCard from '../../common/MovieCard/MovieCard';
+import MovieFilter from './components/MovieFilter/MovieFilter';
 
 import './MoviePage.style.css'
 
@@ -13,9 +14,10 @@ import './MoviePage.style.css'
 
 function MoviePage() {
   const [query, setQuery] = useSearchParams();
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1);
   const keyword = query.get('q');
   const { data, isLoading, isError, error } = useSearchMovieQuery({keyword, page})
+  const [sortedMovieList, setSortedMovieList] = useState(null)
   if(isLoading){
       <LoadingComp />
   }
@@ -23,26 +25,41 @@ function MoviePage() {
       <Alert variant="danger">{error.message}</Alert>
   }
 
+  useEffect(() => {
+    if (data && data.results) {
+      setSortedMovieList(data.results);
+    }
+  }, [data]);
+
+  useEffect(()=>{setQuery('')},[])
+
   const handlePageClick = ({selected}) => {
     setPage(selected+1)
   }
 
-  useEffect(()=>{
-    setQuery('')
-  },[])
+  const handleSortChange = (sortType) => {
+    setSortedMovieList(prevData => [...prevData].sort((a, b) => {
+        if (sortType === 'popularity') {
+          return b.popularity - a.popularity;
+        } if (sortType === 'release_date') {
+          return new Date(b.release_date) - new Date(a.release_date);
+        }
+        return 0;
+      }));
+  };
+
+
   return (
 
     <Container>
       <Row>
         <Col lg={4} xs={12}>
-          <div className="filter-area">
-            필터
-          </div>
+          <MovieFilter onSortChange={handleSortChange} />
         </Col>
         <Col lg={8} xs={12}>
           <Row className="g-4">
-            {data &&
-            data.results.map(movie => (
+            {sortedMovieList &&
+            sortedMovieList.map(movie => (
               <Col lg={4} xs={6} key={movie.id}>
                 <MovieCard movie={movie}/>
               </Col>

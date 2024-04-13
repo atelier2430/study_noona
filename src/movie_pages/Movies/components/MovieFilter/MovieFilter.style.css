@@ -1,0 +1,54 @@
+.filter-area {
+    padding: 3rem 2rem;
+}
+.filter-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+}
+.filter-item input {
+    display: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.filter-item label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 2.4rem;
+}
+.filter-item label::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+
+    border: 0.3rem solid #fff;
+}
+.filter-item input:checked + label:before {
+    background-color: rgb(33, 37, 41);
+}
+.filter-item input[type="radio"] + label::before {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}

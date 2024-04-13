@@ -15,6 +15,28 @@
     width: 120px;
 }
 
+.movie-page .voice-search-area {
+    display: flex;
+    align-items: center;
+}
+.movie-page .voice-search-area .microphone {
+    width: 2rem;
+    height: 2rem;
+}
+.movie-page .voice-search-area .microphone img {
+    width: 100%;
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+.movie-page .voice-search-area button {
+    width: 5rem;
+    font-size: 1.4rem;
+    opacity: 0.5;
+}
+.movie-page .voice-search-area button:hover {
+    opacity: 1;
+}
+
 .detail-box {
     width: 100%;
     padding: 5rem 0;
@@ -22,4 +44,10 @@
 .detail-title {
     margin-bottom: 2rem;
     font-size: 3rem;
+}
+
+@media all and (max-width:1024px){
+    .movie-page .voice-search-area {
+        padding: 0 0 1.4rem;
+    }
 }

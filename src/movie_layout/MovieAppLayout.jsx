@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 import { Outlet, useNavigate } from 'react-router-dom';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
@@ -8,13 +8,21 @@ import MicImageOff from '../assets/images/project05_movie/voice-recorder-off.png
 
 
 function MovieAppLayout() {
-  const [keyword, setKeyword] = useState()
+  const [keyword, setKeyword] = useState('')
   const navigate = useNavigate()
 
+  useEffect(() => {
+    if (keyword) {
+      navigate(`movies?q=${keyword}`);
+    }
+  }, [keyword, navigate]);
+
   const searchByKeyword = (e) => {
-    e.preventDefault()
-    navigate(`movies?q=${keyword}`)
-  }
+    e.preventDefault();
+    if (keyword) {
+      navigate(`movies?q=${keyword}`);
+    }
+  };
 
   const {
     transcript,
@@ -29,7 +37,6 @@ function MovieAppLayout() {
   const stopListeningAndSetKeyword = () => {
     SpeechRecognition.stopListening();
     setKeyword(transcript);
-    navigate(`movies?q=${transcript}`);
   }
 
 
